@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Blausee 기술 블로그`,
-    author: `wwlee94`,
+    title: `우당탕탕 블로그`,
+    author: `ssuwani`,
     description: `📚'기억보다 기록을' 목표로 
     공부한 내용을 정리하는 블로그 ✔︎`,
-    siteUrl: `https://wwlee94.github.io`,
-    email: `wwlee94@naver.com`,
+    siteUrl: `https://ssuwani.github.io`,
+    email: `jsuwan961205@gmail.com`,
     social: {
-      github: `https://github.com/wwlee94`,
-      notion: `https://www.notion.so/LEE-Woo-won-aa26875d3b4f40cdb4a75f86a77a0862`,
+      github: `https://github.com/ssuwani`,
+      notion: `https://www.notion.so/`,
     },
     adsense: {
       adClient: process.env.GOOGLE_AD_CLIENT || 'none',
@@ -43,8 +43,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Blausee | 기술 블로그`,
-        short_name: `Blausee`,
+        name: `우당탕탕 | 블로그`,
+        short_name: `ssuwani`,
         start_url: `/`,
         background_color: `rgb(33, 36, 45)`,
         theme_color: `#0c9ee4`,
@@ -142,8 +142,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-robots-txt`,
       options: {
-        host: `https://wwlee94.github.io`,
-        sitemap: `https://wwlee94.github.io/sitemap.xml`,
+        host: `https://ssuwani.github.io`,
+        sitemap: `https://ssuwani.github.io/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
