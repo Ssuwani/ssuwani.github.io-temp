@@ -3,7 +3,7 @@ module.exports = {
     title: `우당탕탕 블로그`,
     author: `ssuwani`,
     description: `📚'기억보다 기록을' 목표로 
-    공부한 내용을 정리하는 블로그 ✔︎`,
+    공부한 내용을 정리하는 블로그 `,
     siteUrl: `https://ssuwani.github.io`,
     email: `jsuwan961205@gmail.com`,
     social: {
@@ -30,13 +30,13 @@ module.exports = {
         icon: `algorithmIcon`,
         link: `/category/algorithm`,
       },
-      {
-        name: `스터디`,
-        slug: `study`,
-        color: `#C0D545`,
-        icon: `studyIcon`,
-        link: `/category/study`,
-      },
+      // {
+      //   name: `스터디`,
+      //   slug: `study`,
+      //   color: `#C0D545`,
+      //   icon: `studyIcon`,
+      //   link: `/category/study`,
+      // },
     ],
   },
   plugins: [

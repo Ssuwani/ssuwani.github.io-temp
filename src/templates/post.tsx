@@ -148,7 +148,7 @@ const BlogPostTemplate = ({ ...props }: Props) => {
       //   const url = aboveHeaderUrl.split(location.origin)[1];
       //   let element = document.querySelector(`a[href='${url}']`);
       //   if(element){
-             
+
       //   }
       // }
     };
@@ -190,7 +190,7 @@ const BlogPostTemplate = ({ ...props }: Props) => {
             </ContentMain>
             <aside>
               <RelatedPosts posts={relatedPosts} />
-              <Utterances repo="wwlee94/wwlee94.github.io" theme="github-light" />
+              <Utterances repo="ssuwani/ssuwani.github.io" theme="github-light" />
             </aside>
           </Content>
         }

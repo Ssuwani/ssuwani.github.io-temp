@@ -1,9 +1,9 @@
 {
-  "name": "wwlee94",
+  "name": "ssuwani",
   "private": true,
   "description": "A personal blog",
   "version": "0.1.0",
-  "author": "wwlee94 <wwlee94@naver.com>",
+  "author": "ssuwani <jsuwan961205@gmail.com>",
   "scripts": {
     "build": "gatsby build",
     "start": "gatsby develop",
@@ -56,7 +56,7 @@
   "devDependencies": {
     "gh-pages": "^3.0.0"
   },
-  "homepage": "https://github.com/wwlee94/wwlee94.github.io",
+  "homepage": "https://github.com/ssuwani/ssuwani.github.io",
   "keywords": [
     "gatsby"
   ],
