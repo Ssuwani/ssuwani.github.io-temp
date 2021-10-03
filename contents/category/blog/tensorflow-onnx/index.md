@@ -1,12 +1,12 @@
 ---
-title: '블로그 예제'
+title: 'Tensorflow ONNX'
 date: '2021-10-02'
 category: 'blog'
 description: ''
-emoji: '🌫'
+emoji: ''
 ---
 
-> 기본적인 사용법만을 작성한 글입니다.
+> 기본적인 사용법만을 작성한 글입니다. 
 
 > 모델 성능 확인을 위해 MNIST 데이터로 학습하는 과정을 추가했습니다.
 
@@ -14,26 +14,21 @@ emoji: '🌫'
 
 - [tensorflow-onnx](https://github.com/onnx/tensorflow-onnx)
 
-### 목차
+## 목차
 
-1.  tf2onnx 설치
-2.  MNIST 모델 학습 및 저장
-3.  ONNX로 모델 변환
-4.  ONNX로 추론하기
-5.  추론 정확도 비교
-6.  추론 속도 비교
-7.  결론
+1.  MNIST 모델 학습 및 저장
+2.  ONNX
+    1.  tf2onnx 설치
+    2. ONNX로 모델 변환
+    3. ONNX로 추론하기
+    4. 정확도 비교
+    5. 속도 비교
+    6. 조금 더 복잡한 CNN 모델 속도 비교
+3.  결론
 
-### tf2onnx 설치
 
-```bash
-pip install -U tf2onnx
 
-# 현재 나의 버전은 1.10.0
-# 알고있겠지만 -U는 --upgrade와 같다.
-```
-
-### MNIST 모델 학습 및 저장
+## MNIST 모델 학습 및 저장
 
 ```python
 import tensorflow as tf
@@ -72,7 +67,18 @@ AttributeError: '_UserObject' object has no attribute 'add_slot'
 
 최적화 함수인 `optimizer`에 관련되어 있음을 확인하였고 [여기](https://www.python2.net/questions-1719470.htm)에서 힌트를 얻어 파라미터를 추가하니 문제없이 동작하였다.
 
-### ONNX로 모델 변환
+## ONNX
+
+#### 1. tf2onnx 설치
+
+```bash
+pip install -U tf2onnx
+
+# 현재 나의 버전은 1.10.0
+# 알고있겠지만 -U는 --upgrade와 같다.
+```
+
+#### 2. ONNX로 모델 변환
 
 ```bash
 python -m tf2onnx.convert --saved-model tf_model --output model.onnx --opset 12
@@ -80,7 +86,8 @@ python -m tf2onnx.convert --saved-model tf_model --output model.onnx --opset 12
 
 CLI로 모델을 변환할 수 있었다. 이전에 저장한 `tf_model` 을 `model.onnx` 로 변환한다. 또한 `opset` 이라는 인자가 있는데 정확한 의미는 잘 모르겠지만 ONNX의 버전이라고 생각하면 좋을 거 같다. 사용 가능한 버전 및 자세한 정보는 [여기](https://github.com/onnx/tensorflow-onnx#tf2onnx---convert-tensorflow-keras-tensorflowjs-and-tflite-models-to-onnx) 를 확인하면 된다
 
-### ONNX로 추론하기
+
+#### 3. ONNX로 추론하기
 
 ```python
 import onnxruntime
@@ -129,7 +136,7 @@ input_names = [n.name for n in model.inputs]
 ### ['input_1']
 ```
 
-### 추론 정확도 비교
+#### 4. 추론 정확도 비교
 
 ```python
 import tensorflow as tf
@@ -157,7 +164,7 @@ print("onnx result: ", accuracy_score(np.argmax(ort_result, axis=1), test_y))
 
 성능의 변화가 전혀 없었다. 신기하네..
 
-### 추론 속도 비교
+#### 5. 추론 속도 비교
 
 ```python
 import tensorflow as tf
@@ -189,7 +196,7 @@ print("onnx running time: ", time.time() - ort_start)
 
 약 10% 정도 ONNX가 더 빠르다고 볼 수 있다. 조금 더 복잡한 모델을 정의해서 테스트 해봐야겠다.
 
-**조금 더 복잡한 CNN 모델**
+#### 6. 조금 더 복잡한 CNN 모델 속도 비교
 
 ```python
 model = tf.keras.Sequential(
@@ -215,6 +222,6 @@ tf   running time:  76.62953901290894
 onnx running time:  36.256043434143066
 ```
 
-### 결론
+## 결론
 
 사실 이 ONNX를 사용하려던 주목적은 다양한 라이브러리(Tensorflow, PyTorch, Scikit-Learn, ---)로 만들어진 모델을 통일성있게 서빙하기 위함이였는데 이러한 장점뿐만 아니라 속도 테스트에서 봤다시피 약 두배정도 빠르다. 사용하지 않을 이유가 없을 것 같다. ~

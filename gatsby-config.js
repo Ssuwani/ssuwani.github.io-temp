@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `우당탕탕 블로그`,
+    title: `Messages`,
     author: `ssuwani`,
-    description: `📚'기억보다 기록을' 목표로 
-    공부한 내용을 정리하는 블로그 `,
+    description: `기록을 해야겠더라구요..`,
     siteUrl: `https://ssuwani.github.io`,
     email: `jsuwan961205@gmail.com`,
     social: {
