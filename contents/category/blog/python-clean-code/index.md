@@ -1,6 +1,6 @@
 ---
 title: '[책] 파이썬 클린코드 ❗[미완]❗'
-date: '2021-10-02'
+date: '2021-10-03'
 category: 'blog'
 description: ''
 emoji: '📚'
