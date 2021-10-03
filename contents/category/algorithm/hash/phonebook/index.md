@@ -1,9 +1,9 @@
 ---
-title: '[프로그래머스-해시] 전화번호 목폭'
+title: '[프로그래머스-해시] 전화번호 목록'
 date: '2021-10-03'
 category: 'algorithm'
 description: ''
-emoji: '📞'
+emoji: '📔'
 ---
 
 [[info | 프로그래머스 전화번호 목록 문제 보러가기]]
