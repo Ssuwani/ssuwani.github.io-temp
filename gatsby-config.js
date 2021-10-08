@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Messages`,
     author: `ssuwani`,
-    description: `기록을 해야겠더라구요..`,
+    description: `기록을 해야겠더라구요.. `,
     siteUrl: `https://ssuwani.github.io`,
     email: `jsuwan961205@gmail.com`,
     social: {
