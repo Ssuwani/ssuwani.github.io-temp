@@ -9,6 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: configure
+        run: |
+          git config --global user.email "jsuwan961205@gmail.com"
+          git config --global user.name "ssuwani"
+
       - name: yarn install
         run: yarn
 
