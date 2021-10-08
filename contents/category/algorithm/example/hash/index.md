@@ -6,8 +6,6 @@ description: ''
 emoji: '👨‍💻'
 ---
 
-*template*
-
 [[info | 백준 1000. A+B 문제 보러가기]] 
 | https://www.acmicpc.net/problem/1000
 
