@@ -9,6 +9,8 @@ emoji: '👨‍💻'
 [[info | 백준 1000. A+B 문제 보러가기]] 
 | https://www.acmicpc.net/problem/1000
 
+
+
 ## 문제 요약
 
 두 정수 A, B 입력받아서 A+B를 출력하는 문제
