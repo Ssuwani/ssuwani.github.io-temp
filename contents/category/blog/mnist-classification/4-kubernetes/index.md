@@ -210,7 +210,10 @@ k apply -f mnist-serving.yaml
 
 Deployment는 `.spec.replicas` 즉 레플리카셋을 기본적으로 설정할 수 있다. 파일의 내용과 같이 `replicas: 3` 로 설정하면 Pod를 3개 만든다는 이야기다. 이에 따른 강점을 영상으로 잠깐 찍어봤다.
 
-[replicas-test.mov](images/replicas-test.mov)
+<video width="480" controls>
+  <source src="images/replicas-test.mov" type="video/mp4">
+</video>
+
 
 Train 때와 마찬가지로 만들어진 Pod의 Logs를 확인해보자
 
@@ -327,7 +330,10 @@ NodePort가 31322로 잡혀있고 EndPoint로 3개의 Pod가 잘 잡혀있는것
     `while true; do sleep 0.5; curl 192.168.49.2:31322; done;`
     
 
-[NodePort.mov](images/NodePort.mov)
+<video width="480" controls>
+  <source src="images/NodePort.mov" type="video/mp4">
+</video>
+
 
 너무 길어지지만 하나 더 하고 넘어가야한다.
 
