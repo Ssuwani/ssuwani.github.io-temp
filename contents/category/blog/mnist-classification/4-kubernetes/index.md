@@ -38,10 +38,10 @@ minikube ssh를 통해 클러스터 노드의 셸에 접속해 연결을 위한 
 minikube ssh
 sudo mkdir /mnt/mnist # 사실 꼭 안해도 자동으로 생성된다.
 ```
+<details>
+<summary>pv-volume.yaml</summary>
 
-- pv-volume.yaml
-    
-    ```yaml
+```yaml
     apiVersion: v1
     kind: PersistentVolume
     metadata:
@@ -56,23 +56,28 @@ sudo mkdir /mnt/mnist # 사실 꼭 안해도 자동으로 생성된다.
         - ReadWriteOnce
       hostPath:
         path: "/mnt/mnist"
-    ```
-    
-- pv-claim.yaml
-    
-    ```yaml
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: mnist-pv-claim
-    spec:
-      storageClassName: mnist
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 3Gi
-    ```
+```
+</details>
+
+<details>    
+<summary>pv-claim.yaml</summary>
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mnist-pv-claim
+spec:
+  storageClassName: mnist
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+```
+
+</details>
+
     
 
 ```bash
@@ -98,35 +103,37 @@ mnist-pv-claim   Bound    mnist-pv-volume   3Gi        RWO            mnist     
 쿠버네티스에서 배포를 위한 가장 작은 단위인 Pod는 여러개의 워커로드 즉, 애플리케이션 위에서 동작한다. Task에 따라 적절한 애플리케이션을 선택해야한다.
 
 하나의 Pod를 생성하고 안정적으로 실행하는게 초점을 맞춘 Job이 MNIST 모델 학습을 위해 적절하다고 판단하였다.
+<details>
+<summary>mnist-train-job.yaml</summary>
 
-- mnist-train-job.yaml
-    
-    ```yaml
-    apiVersion: batch/v1
-    kind: Job
-    metadata:
-      name: mnist-train-job
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mnist-train-job
+spec:
+  template:
     spec:
-      template:
-        spec:
-          volumes:
-            - name: mnist-storage
-              persistentVolumeClaim:
-                claimName: mnist-pv-claim
+      volumes:
+        - name: mnist-storage
+          persistentVolumeClaim:
+            claimName: mnist-pv-claim
+
+      containers:
+        - name: mnist-train-container
+          image: ssuwani/mnist_train
+          args: ["--epochs", "1", "--save-model", "--save-model-path", "/app/mnist.pt"]
+          volumeMounts:
+            - mountPath: "/app"
+              name: mnist-storage
+      restartPolicy: Never
+  backoffLimit: 4
+```
+</details>
     
-          containers:
-            - name: mnist-train-container
-              image: ssuwani/mnist_train
-              args: ["--epochs", "1", "--save-model", "--save-model-path", "/app/mnist.pt"]
-              volumeMounts:
-                - mountPath: "/app"
-                  name: mnist-storage
-          restartPolicy: Never
-      backoffLimit: 4
-    ```
     
 
-.spec.volumes를 보면 이전에 만든 `mnist-pv-claim` 를 사용하는 `mnist-storage`를 생성한 것을 확인할 수 있다. 또한 `ssuwani/mnist_train` 를 실행하는 컨테이너가 `mnist-storage`를 `/app` 위치로 마운트했다.
+`.spec.volumes`를 보면 이전에 만든 `mnist-pv-claim` 를 사용하는 `mnist-storage`를 생성한 것을 확인할 수 있다. 또한 `ssuwani/mnist_train` 를 실행하는 컨테이너가 `mnist-storage`를 `/app` 위치로 마운트했다.
 
 **Job 실행**
 
@@ -165,43 +172,46 @@ docker@minikube:~$ ls /mnt/mnist/
 mnist.pt # ><
 ```
 
-**✓ MNIST Serving (Deployment + Service)**
+#### **✓ MNIST Serving (Deployment + Service)**
 
 Flask 를 실행하는 이미지를 쿠버네티스 디플로이먼트를 만들고 서비스로 만들어보자
 
-- mnist-serving.yaml
-    
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
+<details>
+<summary>mnist-serving.yaml</summary>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mnist-serving-deployment
+  labels:
+    app: mnist-serving
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mnist-serving
+  template:
     metadata:
-      name: mnist-serving-deployment
       labels:
         app: mnist-serving
     spec:
-      replicas: 3
-      selector:
-        matchLabels:
-          app: mnist-serving
-      template:
-        metadata:
-          labels:
-            app: mnist-serving
-        spec:
-          containers:
-          - name: mnist-serving
-            image: ssuwani/mnist_app
-            args: ["--model_path", "/app/mnist.pt"]
-            ports:
-            - containerPort: 5000
-            volumeMounts:
-              - mountPath: "/app"
-                name: mnist-storage
-          volumes:
-            - name: mnist-storage
-              persistentVolumeClaim:
-                claimName: mnist-pv-claim
-    ```
+      containers:
+      - name: mnist-serving
+        image: ssuwani/mnist_app
+        args: ["--model_path", "/app/mnist.pt"]
+        ports:
+        - containerPort: 5000
+        volumeMounts:
+          - mountPath: "/app"
+            name: mnist-storage
+      volumes:
+        - name: mnist-storage
+          persistentVolumeClaim:
+            claimName: mnist-pv-claim
+```
+</details>
+    
     
 
 ```bash
@@ -247,22 +257,27 @@ docker@minikube:~$ curl http://172.17.0.73:5000/
 
 **서비스 연결하기**
 
-- mnist-serving-service.yaml
-    
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: mnist-service
-    spec:
-      selector:
-        app: mnist-serving
-      ports:
-        - protocol: TCP
-          port: 1234
-          targetPort: 5000
-      type: NodePort
-    ```
+<details>
+<summary>mnist-serving-service.yaml</summary>
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mnist-service
+spec:
+  selector:
+    app: mnist-serving
+  ports:
+    - protocol: TCP
+      port: 1234
+      targetPort: 5000
+  type: NodePort
+```
+
+</details>
+
+   
     
 
 selector로 서비스 대상을 결정한다. 위에서 `mnist-serving.yaml` 에서 `.spec.template.metadata.labels` 로 생성된 Pod의 Label의 일치를 계속해서 추적한다.
@@ -271,6 +286,7 @@ selector로 서비스 대상을 결정한다. 위에서 `mnist-serving.yaml` 에
 # mnist-serving.yaml
 labels:
   app: mnist-serving
+
 
 # mnist-serving-service.yaml
 selector:
@@ -388,53 +404,61 @@ kubectl port-forward service/mnist-service 5000:1234
     ```
     
 
-**✓ Run React App**
+#### **✓ Run React App**
 
 사용자가 이미지를 입력하고 결과를 확인할 수 있는 웹 애플리케이션을 React로 만들었다. Kubernetes 위에 배포해보자.
 
 방금전에 한 MNIST Serving 과 거의 똑같다. Deployment를 만들고 Service 연결하면된다.
 
-- mnist-web.yaml
-    
-    ```yaml
-    apiVersion: apps/v1
-    kind: Deployment
+<details>
+<summary>mnist-web.yaml</summary>
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mnist-web-deployment
+  labels:
+    app: mnist-web
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mnist-web
+  template:
     metadata:
-      name: mnist-web-deployment
       labels:
         app: mnist-web
     spec:
-      replicas: 1
-      selector:
-        matchLabels:
-          app: mnist-web
-      template:
-        metadata:
-          labels:
-            app: mnist-web
-        spec:
-          containers:
-            - name: mnist-web
-              image: ssuwani/mnist_web-app
-    ```
+      containers:
+        - name: mnist-web
+          image: ssuwani/mnist_web-app
+```
+
+</details>
+
+<details>
+<summary>mnist-web-service.yaml</summary>
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: mnist-web-service
+spec:
+  selector:
+    app: mnist-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+```
+
+<details>
+  
     
-- mnist-web-service.yaml
-    
-    ```yaml
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: mnist-web-service
-    spec:
-      selector:
-        app: mnist-web
-      ports:
-        - protocol: TCP
-          port: 80
-          targetPort: 80
-      type: NodePort
-    ```
-    
+
 
 ```bash
 kubectl apply -f mnist-web.yaml
@@ -469,7 +493,7 @@ kubectl port-forward service/mnist-service 5000:1234
 
 ![img_2.jpg](images/img_2.jpg)
 
-**✓ ETC**
+#### **✓ ETC**
 
 - Service Type(NodePort) 에 대한 내용 더 공부하자.
     
