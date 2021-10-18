@@ -83,6 +83,10 @@ def add(a: int, b: int) -> int:
     return a + b
 ```
 
+<br/>
+
+---
+
 <a id="ch2"></a>
 
 # CH2. 파이썬스러운(pythonic) 코드
@@ -431,6 +435,10 @@ class CallCount:
 | obj(*args, **kwargs)                   | \_\_call\_\_(*args, **kwargs)                              | 호출형 객체                |
 
 
+
+<br/>
+
+---
 
 <a id="ch3"></a>
 
