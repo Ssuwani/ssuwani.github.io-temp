@@ -70,6 +70,8 @@ Namespaces are one honking great idea -- let's do more of those!
 
 ## Betterway 1. 사용 중인 파이썬의 버전을 알아두라
 
+파이썬 2는 2020년 1월 1일 수명이 다했다. 더 이상의 버그 수정, 보안 패치, 새로운 기능의 역포팅이 이뤄지지 않음을 의미한다. 
+
 ```python
 which python # /home/suwan/anaconda3/bin/python
 python --version # Python 3.8.8
@@ -79,7 +81,9 @@ python --version # Python 3.8.8
 
 
 
+## Betterway 2. PEP 8 스타일 가이드를 따르라
+
+PEP 8은 파이썬 코드를 어떤 형식으로 작성할지 알려주는 스타일 가이드다. PEP 8을 따르는 일관된 스타일은 코드에 더 친숙하게 접근하고, 더 쉽게 읽고, 더 쉽게 협력할 수 있게 도와준다. 
 
 
-파이썬 2는 2020년 1월 1일 수명이 다했다. 더 이상의 버그 수정, 보안 패치, 새로운 기능의 역포팅이 이뤄지지 않음을 의미한다. 
 
