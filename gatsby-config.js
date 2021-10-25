@@ -29,6 +29,13 @@ module.exports = {
         icon: `algorithmIcon`,
         link: `/category/algorithm`,
       },
+      {
+        name: `Today I Learned`,
+        slug: `til`,
+        color: `#f7615f`,
+        icon: `studyIcon`,
+        link: `/category/til`,
+      },
       // {
       //   name: `스터디`,
       //   slug: `study`,
