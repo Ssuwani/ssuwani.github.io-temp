@@ -303,13 +303,13 @@ email 이라는 속성에 값을 넣을건데, 넣을 때 추가적으로 유효
 ```python
 # __iter__ 를 활용
 class Iterable_iter():
-		def __init__(self):
-            self.values = [1,2,3,4]
-            self._idx = 0
-		def __iter__(self):
-            while self._idx != len(self.values):
-                yield self.values[self._idx]
-                self._idx += 1
+	def __init__(self):
+		self.values = [1,2,3,4]
+        self._idx = 0
+	def __iter__(self):
+		while self._idx != len(self.values):
+			yield self.values[self._idx]
+			self._idx += 1
             
 i_obj = Iterable_iter()
 for i in i_obj:
