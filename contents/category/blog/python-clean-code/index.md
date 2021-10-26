@@ -522,7 +522,7 @@ class CallCount:
 try:
     function()
 except:
-  	pass
+    pass
 ```
 
 만약 위와같이 `function()`을 실행하게 되면  해당 함수에 문제가 되더라도 문제가 되지 않는다;; 정말 큰 문제다
