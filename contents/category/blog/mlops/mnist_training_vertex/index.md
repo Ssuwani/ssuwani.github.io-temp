@@ -254,3 +254,33 @@ test_x[0].tolist()
 ```
 
 <img src="images/result.png"/>
+
+
+
+#### 파이썬에서 예측을 수행해보자
+
+```python
+from google.cloud import aiplatform
+
+endpoint = aiplatform.Endpoint(
+    endpoint_name=f"projects/{PROJECT_ID}/locations/us-central1/endpoints/{ENDPOINT_ID}"
+)
+
+import tensorflow as tf
+
+(_, _), (test_x, test_y) = tf.keras.datasets.mnist.load_data()
+test_x = test_x / 255.0
+one_image = test_x[0]
+
+response = endpoint.predict([one_image.tolist()])
+
+import numpy as np
+
+print("real : {}".format(test_y[0]))
+print("predicted : {}".format(np.argmax(response.predictions, axis=1)[0]))
+
+
+# real : 7
+# predicted : 7
+```
+
