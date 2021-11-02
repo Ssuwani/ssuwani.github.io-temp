@@ -1,6 +1,6 @@
 ---
 title: '[책] 파이썬 코딩의 기술'
-date: '2021-10-31'
+date: '2021-11-02'
 category: 'blog'
 description: ''
 emoji: '📚'
@@ -168,6 +168,98 @@ number = 1.23456
 
 f"{number:.3f}" # '1.235'
 f"{number:.{places}f}" # '1.235'
+```
+
+---
+
+## Better way 5. 복잡한 식을 쓰는 대신 도우미 함수를 작성하라.
+
+- 파이썬 문법을 사용하면 아주 **복잡**하고 읽기 **어려운** 한 줄짜리 식을 쉽게 작성할 수 있다.
+- 하지만 코드를 줄여 쓰는 것보다 가독성을 좋게 하는 것이 더 가치가 있다.
+- if / else를 사용해서 더 가독성이 좋게 만들자.
+
+or / and를 사용하면 논리연산을 해야하기 때문에 뭔가 더 멋있게 코드를 작성할 수 있는데 그렇게 쓰지 마라고 한다.
+
+같은 로직을 반복해서 사용할 때는 도우미 함수를 꼭 활용하라.
+
+
+
+---
+
+## Better way 6. 인덱스를 사용하는 대신 대입을 사용해 데이터를 언패킹하라.
+
+- 파이썬 언패킹은 모든 이터러블 객체에 적용할 수 있다.
+- 언패킹을 사용하면 시각적인 잡음을 줄일 수 있다.
+
+
+
+언패킹을 사용하지 않을 시 생기는 시각적 잡음을 코드로 나타내 보았다.
+
+```python
+menus = [
+  ("americano", 3000),
+  ("latte", 4000),
+  ("milk", 2500),
+]
+for i in range(len(menus)):
+	name = menus[i][0]
+  price = menus[i][1]
+  print(f"menu: {name} price: {price}")
+  
+# menu: americano price: 3000
+# menu: latte price: 4000
+# menu: milk price: 2500
+```
+
+
+
+아래는 언패킹을 사용해서 개선해보겠다.
+
+```python
+for name, price in menus:
+  print(f"menu: {name} price: {price}")
+  
+# menu: americano price: 3000
+# menu: latte price: 4000
+# menu: milk price: 2500
+```
+
+4줄 중 2줄을 줄였다!!  그리고 더 보기 좋다.
+
+
+
+---
+
+## Better way 7. range보다는 enumerate를 사용하라
+
+- enumerate를 사용하면 이터레이터에 대해 루프를 돌면서 이터레이터에서 가져오는 원소의 인덱스까지 얻는 코드를 간결하게 작성할 수 있다.
+- range에 대해 루프를 돌면서 시퀀스의 원소를 인덱스로 가져오기보다는 enumerate를 사용하라.
+- enumerate의 두 번째 파라미터로 어디부터 원소를 가져오기 시작할 지 지정할 수 있다.
+
+
+
+이터러블 객체에 루프를 돌면서 index가 필요한 경우를 range를 사용해서 시각적 잡음을 가지도록 코드를 작성해보았다.
+
+```python
+numbers = ["one", "two", "three"]
+
+for i in range(len(numbers)):
+    print(f"{i+1}번째 요소는 {numbers[i]}입니다.")
+    
+# 1번째 요소는 one입니다.
+# 2번째 요소는 two입니다.
+# 3번째 요소는 three입니다.
+```
+
+아래는 enumerate를 사용해서 시각적 잡음을 줄여보았다.
+
+```python
+for i, num in enumerate(numbers, 1):
+    print(f"{i}번째 요소는 {num}입니다.")
+    
+# 1번째 요소는 one입니다.
+# 2번째 요소는 two입니다.
+# 3번째 요소는 three입니다.
 ```
 
 
