@@ -48,8 +48,9 @@ const SEO = ({ description, lang, meta, title }: Props) => {
               },
               {
                 name: `google-site-verification`,
-                content: "OxCmDAbFt_oP2EzYabwJiA4KNndMwAcKMQdvpa8vL6w",
+                content: "imj7G-ZerBh3MsHkiadmx_eAwSqAeRatmOr0p2L0eJs",
               },
+
               {
                 name: `naver-site-verification`,
                 content: "07c520f56835b243f94776be22c4cbcb671bbfe5",
