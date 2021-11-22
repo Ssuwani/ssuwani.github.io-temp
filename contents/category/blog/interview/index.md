@@ -1,6 +1,6 @@
 ---
 title: '[면접준비] minimum 질문&답변'
-date: '2021-11-19'
+date: '2021-11-22'
 category: 'blog'
 description: ''
 emoji: '❓'
