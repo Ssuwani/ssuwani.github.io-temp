@@ -1,6 +1,6 @@
 ---
 title: '[MNIST Classification - 1] 서비스 웹 애플리케이션'
-date: '2021-10-09'
+date: '2021-10-08'
 category: 'blog'
 description: ''
 emoji: '📚'
