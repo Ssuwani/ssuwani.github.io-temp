@@ -1,7 +1,7 @@
 module.exports = {
 
   siteMetadata: {
-    title: `Messages`,
+    title: `Oops`,
     author: `장수완`,
     description: `MLOps 개발자가 될거야!! `,
     siteUrl: `https://ssuwani.github.io`,
