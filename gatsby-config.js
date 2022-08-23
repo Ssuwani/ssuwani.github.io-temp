@@ -1,9 +1,9 @@
 module.exports = {
 
   siteMetadata: {
-    title: `Oops`,
+    title: `어서OpShow`,
     author: `장수완`,
-    description: `MLOps 개발자가 될거야!! `,
+    description: `MLOps 개발자가 될거야!!`,
     siteUrl: `https://ssuwani.github.io`,
     email: `jsuwan961205@gmail.com`,
     social: {
