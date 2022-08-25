@@ -1,0 +1,686 @@
+<!DOCTYPE html><html lang="ko"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/styles.1cfadd536e0ed4ee026c.css">pre[class*=language-].line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}pre[class*=language-].line-numbers>code{position:relative;white-space:inherit}.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-ms-user-select:none;user-select:none}.line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}</style><meta name="generator" content="Gatsby 2.23.3"/><link rel="icon" href="/favicon-32x32.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="manifest" href="/manifest.webmanifest"/><meta name="theme-color" content="#0c9ee4"/><link rel="apple-touch-icon" sizes="48x48" href="/icons/icon-48x48.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="72x72" href="/icons/icon-72x72.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="96x96" href="/icons/icon-96x96.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="144x144" href="/icons/icon-144x144.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="192x192" href="/icons/icon-192x192.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="256x256" href="/icons/icon-256x256.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="384x384" href="/icons/icon-384x384.png?v=83455313757f7d5558ecbb4d2c6744cf"/><link rel="apple-touch-icon" sizes="512x512" href="/icons/icon-512x512.png?v=83455313757f7d5558ecbb4d2c6744cf"/><style type="text/css">
+    .anchor-header.before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateX(-100%);
+      padding-right: 4px;
+    }
+    .anchor-header.after {
+      display: inline-block;
+      padding-left: 4px;
+    }
+    h1 .anchor-header svg,
+    h2 .anchor-header svg,
+    h3 .anchor-header svg,
+    h4 .anchor-header svg,
+    h5 .anchor-header svg,
+    h6 .anchor-header svg {
+      visibility: hidden;
+    }
+    h1:hover .anchor-header svg,
+    h2:hover .anchor-header svg,
+    h3:hover .anchor-header svg,
+    h4:hover .anchor-header svg,
+    h5:hover .anchor-header svg,
+    h6:hover .anchor-header svg,
+    h1 .anchor-header:focus svg,
+    h2 .anchor-header:focus svg,
+    h3 .anchor-header:focus svg,
+    h4 .anchor-header:focus svg,
+    h5 .anchor-header:focus svg,
+    h6 .anchor-header:focus svg {
+      visibility: visible;
+    }
+  </style><script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      var hash = window.decodeURI(location.hash.replace('#', ''))
+      if (hash !== '') {
+        var element = document.getElementById(hash)
+        if (element) {
+          var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+          var clientTop = document.documentElement.clientTop || document.body.clientTop || 0
+          var offset = element.getBoundingClientRect().top + scrollTop - clientTop
+          // Wait for the browser to finish rendering before scrolling.
+          setTimeout((function() {
+            window.scrollTo(0, offset - 0)
+          }), 0)
+        }
+      }
+    })
+  </script><link rel="sitemap" type="application/xml" href="/sitemap.xml"/><link rel="preconnect" href="https://www.google-analytics.com"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><title data-react-helmet="true">[책] 파이썬 클린코드 | 어서OpShow</title><link data-react-helmet="true" rel="canonical" href="https://ssuwani.github.io/category/blog/python-clean-code/"/><meta data-react-helmet="true" name="description" content="책 “파이썬 클린코드”를 읽고 내용을 정리햇습니다.  “소프트웨어 문제를 해결하는데 단 하나의 솔루션만 있는 것은 아니다” Trade off…"/><meta data-react-helmet="true" property="og:title" content="[책] 파이썬 클린코드"/><meta data-react-helmet="true" property="og:description" content="책 “파이썬 클린코드”를 읽고 내용을 정리햇습니다.  “소프트웨어 문제를 해결하는데 단 하나의 솔루션만 있는 것은 아니다” Trade off…"/><meta data-react-helmet="true" property="og:image" content="https://ssuwani.github.io/images/ogp.png"/><meta data-react-helmet="true" property="og:type" content="website"/><meta data-react-helmet="true" name="google-site-verification" content="imj7G-ZerBh3MsHkiadmx_eAwSqAeRatmOr0p2L0eJs"/><meta data-react-helmet="true" name="naver-site-verification" content="159e698b7dfa582ec3ebdb9c2ad273a4d9a0ed4c"/><script data-react-helmet="true" type="application/ld+json">{"@context":"http://schema.org","@type":"BlogPosting","headline":"[책] 파이썬 클린코드","image":"https://ssuwani.github.io/images/ogp.png","editor":"장수완","datePublished":"2021-10-24","dateCreated":"2021-10-24","dateModified":"2021-10-24","description":"책 “파이썬 클린코드”를 읽고 내용을 정리햇습니다.  “소프트웨어 문제를 해결하는데 단 하나의 솔루션만 있는 것은 아니다” Trade off…","author":{"@type":"Person","name":"장수완","image":"https://ssuwani.github.io/images/avatar.png"},"publisher":{"@type":"Organization","name":"장수완","logo":{"@type":"ImageObject","url":"https://ssuwani.github.io/images/avatar.png","width":150,"height":150}}}</script><script data-react-helmet="true" type="application/ld+json">{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://ssuwani.github.io","name":"HOME"}},{"@type":"ListItem","position":2,"item":{"@id":"https://ssuwani.github.io/blog","name":"블로그"}},{"@type":"ListItem","position":3,"item":{"name":"[책] 파이썬 클린코드"}}]}</script><style data-styled="iiFkmw gNlojF fmzpzu kdMpgf gcLmet liSTQX kAscXg devmEB fTBRLr izTbdK hAYIMS bCIgZk irBJXq KBaLi hyGLFx htBxaS jNtXLx ejjRZu cuevDS AxgAV bpgLWH gFKJVf kilaSx bvCMhp" data-styled-version="4.4.1">
+/* sc-component-id: sc-global-4288524390 */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;-webkit-tap-highlight-color:rgba(0,0,0,0);} html,body{height:100%;} body{--bg:#f5f5f5;--textNormal:#21242d;--headerBackground:#ffffff;--bioBackground:#f5f5f5;--bioColor:rgba(0,0,0,0.87);--bioHighlight:#000000;--categoryHeader:rgba(0,0,0,0.87);--categoryColor:rgba(0,0,0,0.87);--categotyImgage:linear-gradient(-45deg,#ffa649,#f7645b,#805ed4);--postCardColor:rgba(0,0,0,0.87);--postCardHighlight:rgba(0,0,0,0.08);--postCardEmoji:#ffffff;--postCardDivideLine:#969fa7;--tableOfContentsFocusColor:rgb(33,37,41) background-color:var(--bg);color:var(--textNormal);line-height:1.6;font-size:100%;font-weight:400;font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif;-webkit-text-size-adjust:100%;} body.dark{--bg:#21242d;--textNormal:#21242d;--headerBackground:#3B71DA;--bioBackground:#313746;--bioColor:#ffffff;--bioHighlight:#ffffff;--categoryHeader:#ffffff;--categoryColor:#727d86;--categotyImgage:#313746;--postCardColor:#ffffff;--postCardHighlight:#313746;--postCardEmoji:#313746;--postCardDivideLine:#313746;--tableOfContentsFocusColor:#f1f4f7;background-color:var(--bg);color:var(--textNormal);line-height:1.6;font-size:100%;font-weight:400;font-family:"Helvetica Neue",Helvetica,Arial,"Hiragino Kaku Gothic ProN","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,sans-serif;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;} article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;} a{color:#20a8ea;-webkit-text-decoration:none;text-decoration:none;word-break:break-all;-webkit-transition:.2s;transition:.2s;} a:focus{outline:none;} ol,ul,li{list-style:none;} blockquote,q{quotes:none;} blockquote::before,blockquote::after,q::before,q::after{content:'';content:none;} table{border-collapse:collapse;border-spacing:0;} *{box-sizing:border-box;} img{max-width:100%;} button,input{font-family:inherit;font-size:inherit;background:none;border:none;outline:none;-webkit-appearance:none;-moz-appearance:none;appearance:none;border-radius:0;resize:none;} button:focus,input:focus{outline:none;}
+/* sc-component-id: ContentWrapper__IndexContent-sc-184f5wv-0 */
+.gNlojF{max-width:1250px;margin:0 auto;padding:0 1.5em;} @media screen and (max-width:950px){.gNlojF{max-width:760px;}} @media screen and (max-width:500px){.gNlojF{padding:0 20px;}}
+/* sc-component-id: Footer__FooterContent-bp79pz-0 */
+.kilaSx{padding:0.1em 0;}
+/* sc-component-id: Footer__FooterInner-bp79pz-1 */
+.bvCMhp{margin-top:3em;text-align:center;padding:1.5em;border-top:solid 1px #313746;color:#727d86;font-size:14px;} .bvCMhp a{color:#727d86;-webkit-text-decoration:underline;text-decoration:underline;}
+/* sc-component-id: ColorModeToggle__ToggleButton-sc-1os8jrt-0 */
+.kdMpgf{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;margin-left:auto;cursor:pointer;} .kdMpgf .icon-sun{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;text-align:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:100%;color:#222;} .kdMpgf .icon-moon{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;text-align:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;height:100%;color:#fff;}
+/* sc-component-id: Header__HeaderTag-sc-17pj47e-0 */
+.iiFkmw{background:var(--headerBackground);width:100%;box-shadow:rgba(0,0,0,0.2) 0px 3px 3px -2px,rgba(0,0,0,0.14) 0px 3px 4px 0px,rgba(0,0,0,0.12) 0px 1px 8px 0px;}
+/* sc-component-id: Header__HeaderInner-sc-17pj47e-1 */
+.fmzpzu{position:relative;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding:5px;} .fmzpzu .logo{width:150px;height:75px;} @media screen and (max-width:500px){.fmzpzu .logo{margin:0 auto;}} .fmzpzu .message-link{position:absolute;right:0;top:7px;display:block;width:34px;} .fmzpzu .message-link:hover{top:5px;}
+/* sc-component-id: Layout__Content-sc-12w4uko-0 */
+.gcLmet{margin-top:2em;min-height:85vh;} @media screen and (max-width:950px){.gcLmet{display:block;}} @media screen and (max-width:500px){.gcLmet{margin-top:0;}}
+/* sc-component-id: MainWrapper__IndexWrapper-sel83t-0 */
+.liSTQX{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:flex-start;-webkit-box-align:flex-start;-ms-flex-align:flex-start;align-items:flex-start;margin-top:2em;min-height:85vh;} @media screen and (max-width:950px){.liSTQX{display:block;}} @media screen and (max-width:500px){.liSTQX{margin-top:0;}}
+/* sc-component-id: MainWrapper__ContentsWrapper-sel83t-1 */
+.kAscXg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;width:calc(100% - 290px - 40px);margin-right:40px;} @media screen and (max-width:950px){.kAscXg{width:100%;}}
+/* sc-component-id: CategoryLabel__Wrapper-jondgh-0 */
+.irBJXq .category-text{padding:0.3em 1em;display:inline-block;display:inline;padding:3px 6px;line-height:1.2;font-size:12px;border-radius:2px;font-weight:700;color:#fff;} @media screen and (max-width:950px){.irBJXq .category-text{font-size:11px;padding:2.5px 6px;}}
+/* sc-component-id: RelatedPosts__Wrapper-u5r1r9-0 */
+.hyGLFx{background:#f1f4f7;padding:2em 2.5em;} @media screen and (max-width:500px){.hyGLFx{padding:30px 20px;}}
+/* sc-component-id: RelatedPosts__PostCardWrapper-u5r1r9-1 */
+.htBxaS .post-card-link{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;margin-bottom:1em;padding:15px;background:#fff;border-radius:5px;color:#313746;box-shadow:0 1px 2px rgba(0,0,0,0.1);} .htBxaS .post-card-link:hover{background:#e0ebf1;} @media screen and (max-width:500px){.htBxaS .post-card-link{padding:10px;}}
+/* sc-component-id: RelatedPosts__PostCardEmoji-u5r1r9-2 */
+.jNtXLx{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;box-shadow:0 2px 4px rgba(0,0,0,0.4);margin:0;width:80px;height:80px;background:#f1f4f7;border-radius:4px;font-size:50px;} .jNtXLx img{width:55px;height:55px;}
+/* sc-component-id: RelatedPosts__PostCardContent-u5r1r9-3 */
+.ejjRZu{width:calc(100% - 80px);padding-left:15px;} .ejjRZu h5{font-size:1.1em;font-weight:700;line-height:1.45;} .ejjRZu time{display:block;margin-bottom:0.1em;-webkit-letter-spacing:0.05em;-moz-letter-spacing:0.05em;-ms-letter-spacing:0.05em;letter-spacing:0.05em;font-size:0.8em;color:#969fa7;} @media screen and (max-width:500px){.ejjRZu{padding-left:15px;}.ejjRZu h5{font-size:1em;}}
+/* sc-component-id: TableOfContents__TableIndex-v24s1h-0 */
+.cuevDS{position:-webkit-sticky;position:sticky;top:2em;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:left;-webkit-justify-content:left;-ms-flex-pack:left;justify-content:left;width:320px;padding:1.5em;background:none;border-radius:4px;} @media screen and (max-width:950px){.cuevDS{position:relative;margin:2em 0;width:100%;}} @media screen and (max-width:500px){.cuevDS{padding:1.3em 1em;}}
+/* sc-component-id: TableOfContents__TableWrapper-v24s1h-1 */
+.AxgAV{display:block;width:100%;max-height:calc(100vh - 150px);word-break:break-word;color:black;overflow:auto;border-left:1.5px solid rgb(233,236,239);}
+/* sc-component-id: TableOfContents__TableHeader-v24s1h-2 */
+.bpgLWH{display:block;text-align:left;font-size:17px;color:var(--bioColor);padding-left:15px;margin-bottom:15px;}
+/* sc-component-id: TableOfContents__TableContents-v24s1h-3 */
+.gFKJVf{margin:0 10px;font-size:14px;overflow:hidden;-webkit-transition:all 0.125s ease-in 0s;transition:all 0.125s ease-in 0s;} .gFKJVf a{display:block;color:rgb(134,142,150);} .gFKJVf a:hover{color:var(--tableOfContentsFocusColor);} .gFKJVf ul{list-style:none;margin-left:10px;margin-bottom:0px;line-height:1.5rem;} .gFKJVf ul > li a[href='']{color:var(--tableOfContentsFocusColor);-webkit-transform:scale(1.05);-ms-transform:scale(1.05);transform:scale(1.05);}
+/* sc-component-id: post__Content-sc-1poaq2w-0 */
+.devmEB{position:relative;background:#fff;overflow:hidden;font-size:16px;} .devmEB:before,.devmEB:after{content:'';position:absolute;width:0;height:0;z-index:5;-webkit-transition:all 0.2s ease-out 0s;transition:all 0.2s ease-out 0s;} .devmEB:before{top:0;left:0;border-top:20px solid var(--bg);border-right:20px solid transparent;} .devmEB:after{bottom:0;right:0;border-bottom:20px solid var(--bg);border-left:20px solid transparent;} @media screen and (max-width:500px){.devmEB{margin:0 -20px;}.devmEB:before,.devmEB:after{content:none;}}
+/* sc-component-id: post__HeroImage-sc-1poaq2w-1 */
+.fTBRLr{position:relative;background:#313746;text-align:center;background-image:url("/static/pattern-00b88abde489053a0ab3b3e799db37b9.svg");background-repeat:repeat;background-size:400px;min-height:230px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;} .fTBRLr .emoji{width:110px;height:110px;} @media screen and (max-width:500px){.fTBRLr{min-height:190px;}}
+/* sc-component-id: post__ContentMain-sc-1poaq2w-2 */
+.izTbdK{padding:1.8em 2.5em;} @media screen and (max-width:500px){.izTbdK{padding:30px 20px;}}
+/* sc-component-id: post__PostTitle-sc-1poaq2w-3 */
+.bCIgZk{margin:0.1em 0 0.3em;font-size:1.8em;font-weight:700;line-height:1.5;} @media screen and (max-width:500px){.bCIgZk{font-size:25px;}}
+/* sc-component-id: post__PostDate-sc-1poaq2w-4 */
+.hAYIMS{display:block;color:#969fa7;font-size:0.9em;-webkit-letter-spacing:0.05em;-moz-letter-spacing:0.05em;-ms-letter-spacing:0.05em;letter-spacing:0.05em;}
+/* sc-component-id: post__PostContent-sc-1poaq2w-5 */
+.KBaLi{margin:1.5em 0 1em;line-height:1.9;} .KBaLi .gatsby-highlight{margin:1.5em 0;} @media screen and (max-width:500px){.KBaLi .gatsby-highlight{margin:1.5em -20px;}} .KBaLi code[class*='language-'],.KBaLi pre[class*='language-']{-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none;font-family:Menlo,Monaco,'Courier New',monospace;color:#ccc;text-shadow:none;word-break:break-all;} .KBaLi pre[class*='language-'],.KBaLi:not(pre) > code[class*='language-']{background:#313746;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.5);} @media screen and (max-width:500px){.KBaLi pre[class*='language-'],.KBaLi:not(pre) > code[class*='language-']{border-radius:0;}} .KBaLi pre[class*='language-']{padding:1.2em 1.2em;-webkit-overflow-scrolling:touch;position:relative;font-size:14.5px;line-height:1.7;overflow:auto;} .KBaLi .gatsby-highlight pre[class*='language-'].line-numbers{padding-left:3.4em;} .KBaLi pre[class*='language-'].line-numbers span.line-numbers-rows{padding:1.2em 0 1.2em 0.7em;background-color:hsla(0,0%,78.4%,0.15);border:none;} .KBaLi .token.comment,.KBaLi .token.block-comment,.KBaLi .token.prolog,.KBaLi .token.doctype,.KBaLi .token.cdata{color:#999;} .KBaLi .token.punctuation{color:#ccc;} .KBaLi .token.tag,.KBaLi .token.attr-name,.KBaLi .token.namespace,.KBaLi .token.deleted{color:#e2777a;} .KBaLi .token.function-name{color:#6196cc;} .KBaLi .token.boolean,.KBaLi .token.number,.KBaLi .token.function{color:#f08d49;} .KBaLi .token.property,.KBaLi .token.class-name,.KBaLi .token.constant,.KBaLi .token.symbol{color:#f8c555;} .KBaLi .token.selector,.KBaLi .token.important,.KBaLi .token.atrule,.KBaLi .token.keyword,.KBaLi .token.builtin{color:#cc99cd;} .KBaLi .token.string,.KBaLi .token.char,.KBaLi .token.attr-value,.KBaLi .token.regex,.KBaLi .token.variable{color:#7ec699;} .KBaLi .token.operator,.KBaLi .token.entity,.KBaLi .token.url{color:#67cdcc;} .KBaLi .token.important,.KBaLi .token.bold{font-weight:bold;} .KBaLi .token.italic{font-style:italic;} .KBaLi .token.entity{cursor:help;} .KBaLi .token.inserted{color:green;} .KBaLi .gatsby-code-title{position:relative;margin:1.5em 0 -24px auto;background:#616161;color:#fff;font-size:12px;height:24px;padding:0 8px;line-height:24px;font-family:SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;font-weight:500;border-radius:0 5px;display:table;z-index:2;} @media screen and (max-width:500px){.KBaLi .gatsby-code-title{border-radius:0 0 0 5px;margin-right:-20px;}} .KBaLi .gatsby-code-title + .gatsby-highlight{margin-top:0;} .KBaLi p > code,.KBaLi li > code{color:#ff3860 !important;background:#f9f1f3;padding:0.15em 0.4em;margin:0.2em;border-radius:4px;font-size:0.85em;word-break:break-all;white-space:pre-line;} .KBaLi strong > code{font-family:inherit !important;} .KBaLi a:hover{-webkit-text-decoration:underline;text-decoration:underline;} .KBaLi p{margin:0.5em 0;} .KBaLi h1,.KBaLi h2,.KBaLi h3,.KBaLi h4,.KBaLi h5,.KBaLi h6{margin:40px 0 10px;font-weight:700;line-height:1.5;} .KBaLi h1{margin:45px 0 12px;padding:5px 0 5px 17px;font-size:1.55em;} .KBaLi h1:before{position:absolute;top:0;left:0;content:"";display:inline-block;width:5px;height:100%;border-radius:5px;background:linear-gradient(0deg,#ffa649 0%,#ffa649 50%,#f7645b 50%,#f7645b 100%);} .KBaLi h2{position:relative;margin:45px 0 12px;padding:5px 0 5px 17px;font-size:1.40em;} .KBaLi h2:before{position:absolute;top:0;left:0;content:"";display:inline-block;width:5px;height:100%;border-radius:5px;background:linear-gradient(0deg,#ffa649 0%,#ffa649 50%,#f7645b 50%,#f7645b 100%);} .KBaLi h3{margin:40px 0 12px;font-size:1.40em;} .KBaLi h4{position:relative;padding-left:18px;font-size:1.2em;} .KBaLi h4:before{position:absolute;top:.2em;left:0;content:"";display:inline-block;width:14px;height:19px;background-image:url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDIyLjEuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IuODrOOCpOODpOODvF8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiCgkgeT0iMHB4IiB2aWV3Qm94PSIwIDAgMzAgNDUiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwIDQ1OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6I0Y3NjQ1Qzt9Cgkuc3Qxe2ZpbGw6I0ZGQTc0ODt9Cjwvc3R5bGU+Cjx0aXRsZT5pY29uPC90aXRsZT4KPHBhdGggY2xhc3M9InN0MCIgZD0iTTI4LjEsMzAuMWMwLDcuNS02LjEsMTMuNi0xMy42LDEzLjZTMC45LDM3LjcsMC45LDMwLjFTNywxNi41LDE0LjUsMTYuNVMyOC4xLDIyLjYsMjguMSwzMC4xeiIvPgo8cGF0aCBjbGFzcz0ic3QxIiBkPSJNMjguMSwxNS42YzAsNy41LTYuMSwxMy42LTEzLjYsMTMuNlMwLjksMjMuMSwwLjksMTUuNlM3LDIsMTQuNSwyUzI4LjEsOC4xLDI4LjEsMTUuNnoiLz4KPC9zdmc+Cg==");background-size:contain;background-repeat:no-repeat;} .KBaLi ul,.KBaLi ol{margin:1em 0;} .KBaLi ul p,.KBaLi ol p{margin:0;} .KBaLi ul{padding-left:1.2em;} .KBaLi ul li{margin:.4em 0;list-style:disc;} .KBaLi ul ul,.KBaLi ul ol{margin:0;} .KBaLi ol{counter-reset:number;} .KBaLi ol > li{list-style:none;list-style-position:inside;position:relative;padding:0 0 0 30px;margin:0.5em 0;} .KBaLi ol > li:before{display:inline-block;position:absolute;left:0;top:0;width:20px;height:20px;margin:.4em 0;border-radius:25%;background:#5c9ee7;color:#fff;font-weight:700;font-size:14px;text-align:center;line-height:20px;content:counter(number);counter-increment:number;} .KBaLi ol ul{margin:0;} .KBaLi strong{font-weight:550;font-size:1.1em;} .KBaLi em{font-style:italic;} .KBaLi del{-webkit-text-decoration:line-through;text-decoration:line-through;} .KBaLi hr{display:block;margin:2em 0;border:none;border-top:dotted 3px #e1eaf3;} .KBaLi table{display:block;margin:1em 0;border-spacing:2px;border-collapse:separate;overflow:auto;-webkit-overflow-scrolling:touch;width:auto;font-size:.9em;line-height:1.4;} .KBaLi table th{background-color:#313746;color:#FFF;padding:10px 12px;text-align:center;font-weight:700;} .KBaLi table th[align="center"]{text-align:center;} .KBaLi table th[align="right"]{text-align:right;} .KBaLi table td{background-color:#f1f4f7;color:#313746;padding:10px 12px;} .KBaLi table td code[class*='language-']{color:#313746;} .KBaLi table thead tr th:first-child{border-radius:5px 0 0 0;} .KBaLi table thead tr th:last-child{border-radius:0 5px 0 0;} .KBaLi table tbody tr:last-child td:first-child{border-radius:0 0 0 5px;} .KBaLi table tbody tr:last-child td:last-child{border-radius:0 0 5px 0;} .KBaLi blockquote{margin:1em 0;padding:0 1em;color:#6a737d;border-left:.25em solid #dfe2e5;} .KBaLi .gatsby-resp-image-wrapper{margin:2em 0;box-shadow:1px 1px 20px lightgrey;border-radius:4px;overflow:hidden;} .KBaLi .anchor-header{margin:2px 0 0 0;} .KBaLi .custom-block{margin:1em 0;background:#f1f4f7;} .KBaLi .custom-block-heading{font-weight:700;} .KBaLi .custom-block-heading .emoji{width:1.2em !important;height:1.2em !important;vertical-align:-0.2em !important;} .KBaLi .custom-block-body{font-size:0.92em;} .KBaLi .custom-block-body > *:first-child{margin-top:0;} .KBaLi .custom-block-body > *:last-child{margin-bottom:0;} .KBaLi .custom-block-body h5{font-size:1.05em;margin:20px 0 5px;} .KBaLi > *:first-child{margin-top:0;} .KBaLi .custom-block.simple{padding:1em 1.2em;border-radius:5px;} .KBaLi .custom-block.simple .custom-block-heading{font-size:1.1em;} .KBaLi .custom-block.info,.KBaLi .custom-block.alert,.KBaLi .custom-block.notice{padding:0.7em 1em;border-left:solid 4px #20a8ea;border-radius:1px 3px 3px 1px;} .KBaLi .custom-block.alert{border-left-color:#f7615f;background:#ffeff0;} .KBaLi .custom-block.alert .custom-block-heading{color:#f7615f;} .KBaLi .custom-block.notice{border-left-color:#ffa22b;background:#fff4df;} .KBaLi .custom-block.notice .custom-block-heading{color:#ffa22b;} .KBaLi .custom-block.image-small,.KBaLi .custom-block.image-medium{background:#c0e2fb;padding:1.5em;text-align:center;border-radius:5px;} .KBaLi .custom-block.image-small .gatsby-resp-image-wrapper,.KBaLi .custom-block.image-medium .gatsby-resp-image-wrapper{margin:0;border:none;box-shadow:0 5px 15px rgba(0,0,0,0.15);} .KBaLi .custom-block.image-small .gatsby-resp-image-wrapper{max-width:350px !important;border:none;} .KBaLi .custom-block.image-medium .gatsby-resp-image-wrapper{max-width:450px !important;border:none;}</style><link as="script" rel="preload" href="/webpack-runtime-91cbc5ed6c6972297464.js"/><link as="script" rel="preload" href="/framework-59a9ef51c55d9b62f7de.js"/><link as="script" rel="preload" href="/styles-09367947dddffb36886c.js"/><link as="script" rel="preload" href="/app-e1cbbafd9e0d67222ba1.js"/><link as="script" rel="preload" href="/de71a805-ab927e1633c63597cfb4.js"/><link as="script" rel="preload" href="/53b27b57f60ee3e1ca57a66cde9add975dffb161-2b60719b91291bfda095.js"/><link as="script" rel="preload" href="/component---src-templates-post-tsx-ee1c336a1aa63cfbc58e.js"/><link as="fetch" rel="preload" href="/page-data/category/blog/python-clean-code/page-data.json" crossorigin="anonymous"/><link as="fetch" rel="preload" href="/page-data/app-data.json" crossorigin="anonymous"/></head><body><script>
+void function() {
+  window.__onThemeChange = function() {}
+
+  var preferredTheme
+  try {
+    preferredTheme = localStorage.getItem('theme')
+  } catch (err) { }
+
+  function setTheme(newTheme) {
+    if (preferredTheme && document.body.classList.contains(preferredTheme)) {
+      document.body.classList.replace(preferredTheme, newTheme)
+    } else {
+      document.body.classList.add(newTheme)
+    }
+
+    window.__theme = newTheme
+    preferredTheme = newTheme
+    window.__onThemeChange(newTheme)
+  }
+
+  window.__setPreferredTheme = function(newTheme) {
+    setTheme(newTheme)
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (err) {}
+  }
+
+  var darkQuery = window.matchMedia('(prefers-color-scheme: dark)')
+  darkQuery.addListener(function(e) {
+    window.__setPreferredTheme(e.matches ? 'dark' : 'light')
+  })
+
+  setTheme(preferredTheme || (darkQuery.matches ? 'dark' : 'light'))
+}()
+    </script><div id="___gatsby"><div style="outline:none" tabindex="-1" id="gatsby-focus-wrapper"><div class="App" style="background-color:var(--bg);color:var(--textNormal);transition:color 0.2s ease-out, background 0.2s ease-out"><header class="Header__HeaderTag-sc-17pj47e-0 iiFkmw"><div class="ContentWrapper__IndexContent-sc-184f5wv-0 gNlojF"><div class="Header__HeaderInner-sc-17pj47e-1 fmzpzu"><a class="logo-link" href="/"><img class="logo" src="/static/logo-ec471251d97b410ffb71148a2ce05745.png" alt="어서OpShow"/></a><div class="ColorModeToggle__ToggleButton-sc-1os8jrt-0 kdMpgf"><div style="position:relative;display:inline-block;text-align:left;opacity:1;direction:ltr;border-radius:13px;-webkit-transition:opacity 0.25s;-moz-transition:opacity 0.25s;transition:opacity 0.25s;touch-action:none;-webkit-tap-highlight-color:rgba(0, 0, 0, 0);-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none"><div class="react-switch-bg" style="height:26px;width:54px;margin:0;position:relative;background:#d9dfe2;border-radius:13px;cursor:pointer;-webkit-transition:background 0.25s;-moz-transition:background 0.25s;transition:background 0.25s"><div style="height:26px;width:29px;position:relative;opacity:0;pointer-events:none;-webkit-transition:opacity 0.25s;-moz-transition:opacity 0.25s;transition:opacity 0.25s"><div class="icon-moon checkedIcon"><svg width="24" height="24" fill="#EFDC05"><rect width="24" height="24" fill="none" rx="0" ry="0"></rect><path fill-rule="evenodd" clip-rule="evenodd" d="M14.8102 3.2H13.8202C13.4902 3.2 13.2302 2.93 13.2302 2.6C13.2302 2.27 13.5002 2 13.8302 2H16.2602C16.5002 2 16.7202 2.15 16.8102 2.37C16.9002 2.59 16.8502 2.85 16.6802 3.02L15.2702 4.43H16.2602C16.5902 4.43 16.8602 4.7 16.8602 5.03C16.8602 5.36 16.5902 5.63 16.2602 5.63H13.8202C13.5802 5.63 13.3602 5.48 13.2702 5.26C13.1802 5.04 13.2302 4.78 13.4002 4.61L14.8102 3.2ZM20.1401 11.0101H21.1301C21.4601 11.0101 21.7401 11.2801 21.7401 11.6101C21.7401 11.9401 21.4701 12.2101 21.1401 12.2101H18.7001C18.4601 12.2101 18.2401 12.0601 18.1501 11.8401C18.0601 11.6201 18.1101 11.3601 18.2801 11.1901L19.6901 9.78008H18.7001C18.3701 9.78008 18.1001 9.51008 18.1001 9.18008C18.1001 8.85008 18.3701 8.58008 18.7001 8.58008H21.1301C21.3701 8.58008 21.5901 8.73008 21.6801 8.95008C21.7701 9.17008 21.7201 9.43008 21.5501 9.60008L20.1401 11.0101ZM11.0302 9.8499H12.8502L10.7002 11.9999C10.5302 12.1699 10.4802 12.4299 10.5702 12.6499C10.6602 12.8699 10.8802 13.0199 11.1202 13.0199H14.2902C14.6202 13.0199 14.8902 12.7499 14.8902 12.4199C14.8902 12.0899 14.6202 11.8199 14.2902 11.8199H12.5602L14.7102 9.6699C14.8802 9.4999 14.9302 9.2399 14.8402 9.0199C14.7502 8.7999 14.5302 8.6499 14.2902 8.6499H11.0202C10.6902 8.6499 10.4202 8.9199 10.4202 9.2499C10.4202 9.5799 10.7002 9.8499 11.0302 9.8499ZM14.5501 16.89C15.6601 16.89 16.7201 16.66 17.7101 16.19C17.9401 16.08 18.2101 16.13 18.3801 16.3C18.5601 16.48 18.6101 16.75 18.5001 16.98C17.0901 20.05 13.9901 22.03 10.6001 22.03C5.79013 22.03 1.88013 18.12 1.88013 13.31C1.88013 9.94004 3.87013 6.84004 6.93013 5.40004C7.16013 5.29004 7.43012 5.34004 7.61012 5.52004C7.79012 5.70004 7.84013 5.97004 7.73013 6.20004C7.27013 7.19004 7.03012 8.26004 7.03012 9.38004C7.03012 13.52 10.4001 16.89 14.5501 16.89ZM3.09013 13.31C3.09013 17.46 6.46012 20.83 10.6101 20.83C12.9901 20.83 15.2001 19.7 16.6001 17.85C15.9401 18.01 15.2501 18.09 14.5501 18.09C9.74013 18.09 5.83012 14.18 5.83012 9.38004C5.83012 8.68004 5.91013 7.99004 6.07013 7.32004C4.22013 8.73004 3.09013 10.94 3.09013 13.31Z"></path></svg></div></div><div style="height:26px;width:29px;position:absolute;opacity:1;right:0;top:0;pointer-events:none;-webkit-transition:opacity 0.25s;-moz-transition:opacity 0.25s;transition:opacity 0.25s"><div class="icon-sun uncheckedIcon"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" size="24" height="24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 6.934l1-2.934c.072-.213.078-.452 0-.682-.188-.553-.789-.848-1.341-.659-.553.189-.847.788-.659 1.341l1 2.934zM4 11c-.213-.072-.452-.078-.682 0-.553.188-.848.789-.659 1.341.189.553.788.847 1.341.659l2.934-1-2.934-1zM12 17.066l-1 2.934c-.072.213-.078.452 0 .682.188.553.789.848 1.341.659.553-.189.847-.788.659-1.341l-1-2.934zM21.341 11.657c-.188-.553-.788-.848-1.341-.659l-2.934 1 2.934 1c.213.072.452.078.682 0 .552-.188.847-.789.659-1.341zM5.636 7.05l2.781 1.367-1.367-2.781c-.1-.202-.265-.375-.482-.482-.524-.258-1.157-.042-1.415.482-.257.523-.041 1.157.483 1.414zM5.153 17.432c-.257.523-.041 1.156.482 1.414.523.257 1.157.041 1.414-.482l1.367-2.781-2.781 1.367c-.201.099-.374.263-.482.482zM18.363 16.949l-2.781-1.367 1.367 2.781c.1.202.264.375.482.482.523.257 1.156.041 1.414-.482s.042-1.157-.482-1.414zM18.844 6.566c.258-.524.042-1.157-.481-1.415-.523-.257-1.157-.041-1.414.482l-1.369 2.783 2.782-1.368c.202-.1.375-.264.482-.482zM12 7.5c-2.481 0-4.5 2.019-4.5 4.5s2.019 4.5 4.5 4.5 4.5-2.019 4.5-4.5-2.019-4.5-4.5-4.5z"></path></svg></div></div></div><div class="react-switch-handle" style="height:26px;width:26px;background:#ffffff;display:inline-block;cursor:pointer;border-radius:50%;position:absolute;transform:translateX(0px);top:0;outline:0;box-shadow:0px 1px 5px rgba(0, 0, 0, 0.6);border:0;-webkit-transition:background-color 0.25s, transform 0.25s, box-shadow 0.15s;-moz-transition:background-color 0.25s, transform 0.25s, box-shadow 0.15s;transition:background-color 0.25s, transform 0.25s, box-shadow 0.15s"></div><input type="checkbox" role="switch" style="border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px" id="normal-switch"/></div></div></div></div></header><div class="ContentWrapper__IndexContent-sc-184f5wv-0 gNlojF"><div class="Layout__Content-sc-12w4uko-0 gcLmet"><main><div class="MainWrapper__IndexWrapper-sel83t-0 liSTQX"><div class="MainWrapper__ContentsWrapper-sel83t-1 kAscXg"><section class="post__Content-sc-1poaq2w-0 devmEB"><p class="post__HeroImage-sc-1poaq2w-1 fTBRLr"><img class="emoji" draggable="false" alt="📚" src="https://twemoji.maxcdn.com/v/12.1.6/svg/1f4da.svg"/></p><div class="post__ContentMain-sc-1poaq2w-2 izTbdK"><time class="post__PostDate-sc-1poaq2w-4 hAYIMS">2021.10.24</time><h1 class="post__PostTitle-sc-1poaq2w-3 bCIgZk">[책] 파이썬 클린코드</h1><div class="CategoryLabel__Wrapper-jondgh-0 irBJXq"><a class="category-text" style="background:#ffa22b" href="/category/blog">블로그</a></div><div class="post__PostContent-sc-1poaq2w-5 KBaLi"><div class="custom-block info"><div class="custom-block-heading">책 “파이썬 클린코드”를 읽고 내용을 정리햇습니다. </div><div class="custom-block-body"></div></div>
+<br/>
+<br/>
+<p>“소프트웨어 문제를 해결하는데 단 <strong>하나의 솔루션만 있는 것은 아니다</strong>” Trade off 가 있는 경우가 많은데 이럴 때 하나의 원칙을 따라가야한다. 책을 읽으면 하나의 원칙을 배울 수 있을 것이다.</p>
+<blockquote>
+<p>하지만 정답이라는 것은 없다. <strong>책을 읽고 동의하지 않아도 좋다.</strong> 발전적인 토론을 통해 다양한 의견을 검토하는 것을 권장한다!!</p>
+</blockquote>
+<h2 id="목차--아직-작성-중인-글입니다" style="position:relative;"><a href="#%EB%AA%A9%EC%B0%A8--%EC%95%84%EC%A7%81-%EC%9E%91%EC%84%B1-%EC%A4%91%EC%9D%B8-%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4" aria-label="목차  아직 작성 중인 글입니다 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>목차 (❗❗❗ 아직 작성 중인 글입니다.)</h2>
+<ol>
+<li><a href="#ch1">소개, 코드 포매팅과 도구</a> ✅</li>
+<li><a href="#ch2">파이썬스러운(Pythonic) 코드</a> ✅</li>
+<li><a href="#ch3">좋은 코드의 일반적인 특징</a> ✅</li>
+<li>SOLID 원칙 🔳</li>
+<li>데코레이터를 사용한 코드 개선 🔳</li>
+<li>디스크립터로 더 멋진 객체 만들기 🔳</li>
+<li>제너레이터 사용하기 🔳</li>
+<li>단위 테스트와 리팩토링 🔳</li>
+<li>일반적인 디자인 패턴 🔳</li>
+<li>클린 아키텍처 🔳</li>
+</ol>
+<br/>
+<div class="custom-block info"><div class="custom-block-heading">예제 코드 다운로드 </div><div class="custom-block-body"><p><a href="https://github.com/PacktPublishing/Clean-Code-in-Python">https://github.com/PacktPublishing/Clean-Code-in-Python</a></p></div></div>
+<br/>
+<p><a id="ch1"></a></p>
+<h1 id="ch1-소개-코드-포매팅과-도구" style="position:relative;"><a href="#ch1-%EC%86%8C%EA%B0%9C-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%8C%85%EA%B3%BC-%EB%8F%84%EA%B5%AC" aria-label="ch1 소개 코드 포매팅과 도구 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CH1. 소개, 코드 포매팅과 도구</h1>
+<ul>
+<li>프로그래밍 언어의 진정한 의미는 아이디어를 다른 개발자에게 전달하는 것이다.</li>
+<li>기술부채의 가장 안 좋은 점은, 장기적이고 근본적인 문제를 내포하고 있는 것이다.</li>
+<li>주석은 가급적 피해야한다. </li>
+<li>코드안에서 직접 문서화 하는 방법: Docstring, Annotation</li>
+</ul>
+<h2 id="11-docstring" style="position:relative;"><a href="#11-docstring" aria-label="11 docstring permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.1. Docstring</h2>
+<p>소스 코드에 포함된 문서, 코드의 특정 컴포넌트(모듈, 클래스, 메서드 또는 함수)에 대한 문서화</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token triple-quoted-string string">"""This functions is intented to return the sum of two integer values
+  
+  :param int a: An integer to be computed
+  :param int b: An integer to be computed
+  :returns: The sum of two integer values
+  """</span>
+  <span class="token keyword">return</span> a <span class="token operator">+</span> b</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>주석은 코드로 아이디어를 제대로 표현하지 못했음을 나타내는 것이다.</p>
+<p>프로젝트 문서화를 위한 기본 골격을 만들어주는 도구: Sphinx, autodoc</p>
+<h2 id="12-annotation" style="position:relative;"><a href="#12-annotation" aria-label="12 annotation permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1.2. Annotation</h2>
+<p>함수의 인자로 어떤 값이 와야 하는지 힌트를 주는 것</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">def</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">,</span> b<span class="token punctuation">:</span> <span class="token builtin">int</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token builtin">int</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> a <span class="token operator">+</span> b</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre></div>
+<br/>
+<hr>
+<p><a id="ch2"></a></p>
+<h1 id="ch2-파이썬스러운pythonic-코드" style="position:relative;"><a href="#ch2-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%8A%A4%EB%9F%AC%EC%9A%B4pythonic-%EC%BD%94%EB%93%9C" aria-label="ch2 파이썬스러운pythonic 코드 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CH2. 파이썬스러운(pythonic) 코드</h1>
+<p>고유한 관용구 -> “일반적으로” 더 좋은 성능을 낸다. </p>
+<h2 id="21-인덱스와-슬라이스" style="position:relative;"><a href="#21-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%99%80-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4" aria-label="21 인덱스와 슬라이스 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1. 인덱스와 슬라이스</h2>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python">my_nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+
+my_nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># [1, 2]</span>
+my_nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">3</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token comment"># [1, 3]</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<h3 id="211-자체-시퀀스-생성" style="position:relative;"><a href="#211-%EC%9E%90%EC%B2%B4-%EC%8B%9C%ED%80%80%EC%8A%A4-%EC%83%9D%EC%84%B1" aria-label="211 자체 시퀀스 생성 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.1.1. 자체 시퀀스 생성</h3>
+<p>파이썬에서는 리스트, 튜플, range, 문자열처럼 값이 연속적으로 이어진 자료형을 시퀀스 자료형(<em>sequence</em> types)라고 부른다. </p>
+<p>바로 위에서 인덱싱과 슬라이싱은 시퀀스 객체에서 <code class="language-text">__getitem__</code>, <code class="language-text">__len__</code> 을 구현되어 있기 때문에 사용가능했던 것이다. key 값으로 객체의 특정 요소를 가져오도록 하는것이 <code class="language-text">__getitem__</code> 인데 이를 시퀀스 객체 아닌 경우에도 사용하도록 해보자.</p>
+<ol>
+<li>
+<p>시퀀스 객체를 감싸는 래퍼 클래스(캡슐화)</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Items</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>values<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_values <span class="token operator">=</span> <span class="token builtin">list</span><span class="token punctuation">(</span>values<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>_values<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> item<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_values<span class="token punctuation">.</span>__getitem__<span class="token punctuation">(</span>item<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>values를 불러와 list로 즉, 시퀀스 데이터로 만들고 시퀀스 객채에서 기본적으로 제공되는 len과 getitem을 사용한 것이다.  values가 시퀀스 객체가 아니더라도 key 값을 통해 특정 객체의 요소를 가져올 수 있는 것이다.</p>
+</li>
+<li>
+<p>collections.UserList 부모 상속</p>
+<p>그렇다고 하는데 이해가 잘 되지는 않는다. ㅠㅠ </p>
+</li>
+<li>
+<p>자신만의 시퀀스를 구현 </p>
+<ul>
+<li>범위로 인덱싱하는 결과는 해당 클래스와 같은 타입의 인스턴스여야 한다. (인덱싱했는데 갑자기 다른 타입이 나오면 안돼!! )</li>
+<li>slice에 의해 제공된 범위는 파이썬이 하는 것처럼 마지막 요소는 제외해야 한다.</li>
+</ul>
+</li>
+</ol>
+<h2 id="22-컨텍스트-관리자" style="position:relative;"><a href="#22-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EA%B4%80%EB%A6%AC%EC%9E%90" aria-label="22 컨텍스트 관리자 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.2. <strong>컨텍스트 관리자</strong></h2>
+<p>주요 동작의 전후에 특정 작업을 꼭 실행하려면 어떻게 해야할까?</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python">f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+
+<span class="token operator">~</span> blah blah <span class="token operator">~</span>
+
+f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>위의 코드는 file을 읽고 f에 할당하며 어떠한 일을 한다. 이후에 f에 할당된 리소스를 해제해준다. 이때 만약 blah에서 오류가 발생한다면?? f의 리소스는 해제되지 못하고 메모리에 남아 문제를 일으킬 수 있다. 그래서 다음과 같은 코드로 개선이 가능하다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python">f <span class="token operator">=</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+  <span class="token operator">~</span> blah blah <span class="token operator">~</span>
+<span class="token keyword">finally</span><span class="token punctuation">:</span>
+  f<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>하지만 귀찮고 파이써닉 하지않다! 아래의 코드로 멋있게 구현이 가능하다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+  <span class="token operator">~</span> blah blah <span class="token operator">~</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span></span></pre></div>
+<p>with 문은 컨텍스트 관리자로 진입하게 한다. 어려운말로 open 함수는 컨텍스트 관리자 프로토콜을 구현한다.</p>
+<p>컨텍스트 관리자는 <code class="language-text">__enter__</code>, <code class="language-text">__exit__</code> 두개의 매직 메소드로 구성된다. 특정 코드의 시작과 끝에서 각각 두개의 함수가 실행된다고 이해하면 간단할 것 같다.</p>
+<p>그래서 <code class="language-text">__enter__</code>, <code class="language-text">__exit__</code>를 커스텀해서 주요코드의 앞뒤로 실행되게 할 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">from</span> datetime <span class="token keyword">import</span> datetime
+<span class="token keyword">class</span> <span class="token class-name">TimeHandler</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__enter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"start: "</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__exit__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> exc_type<span class="token punctuation">,</span> ex_value<span class="token punctuation">,</span> ex_traceback<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"end: "</span><span class="token punctuation">,</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">with</span> TimeHandler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello~ suwan"</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>실행결과</p>
+<div class="gatsby-highlight" data-language="text"><pre style="counter-reset: linenumber NaN" class="language-text line-numbers"><code class="language-text">start:  2021-10-17 11:36:59.408708
+Hello~ suwan
+end:  2021-10-17 11:36:59.408927</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre></div>
+<p>위의 TimeHandler에서 <code class="language-text">__exit__</code> 함수를 보면 <code class="language-text">exc_type</code>, <code class="language-text">ex_value</code>, <code class="language-text">ex_traceback</code> 을 확인할 수 있다. 함수가 실행되다가 문제가 발생하면 변수에 저장된다. 또한 코드에 문제가 발생하더라도 <code class="language-text">__exit__</code>는 문제없이 실행되는 것을 아래의 코드로 확인할 수 있다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">with</span> TimeHandler<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"Hello~ suwan"</span><span class="token punctuation">)</span>
+    <span class="token keyword">raise</span> NameError<span class="token punctuation">(</span><span class="token string">"Error"</span><span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre></div>
+<p>실행결과</p>
+<div class="gatsby-highlight" data-language="text"><pre style="counter-reset: linenumber NaN" class="language-text line-numbers"><code class="language-text">start:  2021-10-17 11:40:31.713844
+Hello~ suwan
+end:  2021-10-17 11:40:31.713978 &lt;- 문제가 발생했지만 실행되었다!
+Traceback (most recent call last):
+  File &quot;&lt;stdin&gt;&quot;, line 3, in &lt;module&gt;
+NameError: Error</code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<blockquote>
+<p>주의할 점: <code class="language-text">__exit__</code> 에서 <code class="language-text">True</code> 를 반환하게 하면 Error가 발생하더라도 에러를 반환하지 못한다.</p>
+</blockquote>
+<p>책에서 <code class="language-text">contextlib</code> 를 이용해서 위와 같은 일을하는 두가지 방법을 소개한다. 하나는 <code class="language-text">Handler</code> 클래스를 정의하지 않고 함수 단위에서 제너레이터를 이요한 방법이고 또 하나는 <code class="language-text">Handler</code> 클래스를 <code class="language-text">contextlib.ContextDecorator</code>를 상속하여 정의하고 with 문 대신 데코레이터를 사용하는 방법이다.  두가지 방식의 장점이 명확하고 책에 설명되어 있지만 따로 정리하지는 않았다.</p>
+<h2 id="23-프로퍼티-속성과-객체-메서드의-다른-타입들" style="position:relative;"><a href="#23-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%86%8D%EC%84%B1%EA%B3%BC-%EA%B0%9D%EC%B2%B4-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%EB%8B%A4%EB%A5%B8-%ED%83%80%EC%9E%85%EB%93%A4" aria-label="23 프로퍼티 속성과 객체 메서드의 다른 타입들 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3. 프로퍼티, 속성과 객체 메서드의 다른 타입들</h2>
+<h4 id="파이썬에서의-밑줄" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C%EC%9D%98-%EB%B0%91%EC%A4%84" aria-label="파이썬에서의 밑줄 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파이썬에서의 밑줄</h4>
+<p>java, cpp, c# 등에선 <code class="language-text">public</code>, <code class="language-text">private</code>, <code class="language-text">protected</code> 를 통해 프토퍼티들의 공개 범위를 지정할 수 있다. 하지만 파이썬에선 모든 것이 <code class="language-text">public</code> 이다. 단지 몇가지 규칙사항이 있을 뿐이다. 강제하는 것은 아니다.</p>
+<p>아래의 코드가 많은 것을 대신 설명해주리라 생각한다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">A</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>a <span class="token operator">=</span> <span class="token number">1</span>
+        self<span class="token punctuation">.</span>_b <span class="token operator">=</span> <span class="token number">2</span>
+        self<span class="token punctuation">.</span>__c <span class="token operator">=</span> <span class="token number">3</span>
+        
+a <span class="token operator">=</span> A<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token builtin">vars</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span> <span class="token punctuation">{</span><span class="token string">'a'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">'_b'</span><span class="token punctuation">:</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">'_A__c'</span><span class="token punctuation">:</span> <span class="token number">3</span><span class="token punctuation">}</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>밑줄로 시작하는 속성은 해당 객체에서 private를 의미하고 호출되지 않기를 원하지만 말그대로 원할 뿐이다. 호출하려면 호출할 수 있다. 그리고 많은 사람들이 헷갈려하는 부분이 밑줄 두개에 대한 부분이다. 위의 예에서 보다시피 함수명 앞에 밑줄 두개를 넣으면 파이썬이 다른 이름으로 속성을 만든다. 이를 <strong>맹글링(name mangling)</strong>이라 한다. </p>
+<p>이중 밑줄을 사용하면 조금은 복잡하게 함수명이 만들어지니 private한 속성를 정의했다고 말할수도 있겠지만 사실 이는 파이써닉하지 못하다. 맹글링은 사실 여러 번 확장되는 클래스의 메서드를 이름 충돌 없이 오버라이드하기 위해 만들어졌기 때문이다. </p>
+<p>따라서 속성를 private으로 정의하려면 밑줄 하나만을 사용하고 파이썬스러운 관습을 지키도록하자!</p>
+<h3 id="231-프로퍼티" style="position:relative;"><a href="#231-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0" aria-label="231 프로퍼티 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2.3.1. <strong>프로퍼티</strong></h3>
+<p>객체의 값을 저장할 때 일반적으로 속성을 사용한다. 때로는 객체의 속성을 기반으로 다른 속성을 계속하고자 할 때도 있다. 이때 <code class="language-text">프로퍼티</code>를 사용하는 것은 좋은 선택이다. 예제를 보면 조금 더 빠르게 이해가 된다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">import</span> re
+
+EMAIL_FORMAT <span class="token operator">=</span> re<span class="token punctuation">.</span><span class="token builtin">compile</span><span class="token punctuation">(</span><span class="token string">r"[^@]+@[^@]+[^@]+"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">def</span> <span class="token function">is_valid_email</span><span class="token punctuation">(</span>potentially_valid_email<span class="token punctuation">:</span> <span class="token builtin">str</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span>EMAIL_FORMAT<span class="token punctuation">,</span> potentially_valid_email<span class="token punctuation">)</span> <span class="token keyword">is</span> <span class="token keyword">not</span> <span class="token boolean">None</span>
+
+<span class="token keyword">class</span> <span class="token class-name">User</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> username<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>username <span class="token operator">=</span> username
+        self<span class="token punctuation">.</span>_email <span class="token operator">=</span> <span class="token boolean">None</span>
+
+<span class="token decorator annotation punctuation">@property</span>
+<span class="token keyword">def</span> <span class="token function">email</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">return</span> self<span class="token punctuation">.</span>_email
+  
+<span class="token decorator annotation punctuation">@email_setter</span>
+<span class="token keyword">def</span> <span class="token function">email</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> new_email<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> <span class="token keyword">not</span> is_valid_email<span class="token punctuation">(</span>new_email<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">raise</span> ValueError<span class="token punctuation">(</span><span class="token string">"유효한 이메일이 아님"</span><span class="token punctuation">)</span>
+		self<span class="token punctuation">.</span>_email <span class="token operator">=</span> new_email
+  </code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>email 이라는 속성에 값을 넣을건데, 넣을 때 추가적으로 유효성 검사를 거치는 예제이다. 이를 <code class="language-text">property</code> 가 아닌 방법으로 구현하려면 새로운 메소드(set_)를 만들어줘야 하는데 이는 실제 코드가 무엇을 하는지 혼돈스럽고 어려운 경우를 초례할 수 있다. 객체의 속성에 값을 부여하는 것과 적절성을 판단하는 것은 같은 맥락에서의 이야기이다.  관련해서 아래의 중요한 조언이 이야기된다.</p>
+<blockquote>
+<p>메서드는 한 가지만 수행해야 한다. 작업을 처리한 다음, 상태를 확인하려면 메서드를 분리해야 한다.</p>
+</blockquote>
+<h2 id="4-이터러블-객체" style="position:relative;"><a href="#4-%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%94-%EA%B0%9D%EC%B2%B4" aria-label="4 이터러블 객체 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 이터러블 객체</h2>
+<p>파이썬에서 list, tuple, set, dict는 기본적으로 for 루프를 통해 반복적으로 값을 가져올 수 있다. 즉 iterable하다.</p>
+<p>그러나 이외에도 직접 iterable한 객체를 만들 수 있다. iterable은 <code class="language-text">__iter__</code> 매직 메서드를 구현한 객체, 이터레이터는 <code class="language-text">__next__</code> 매직 메서드를 구현한 객체를 말한다.</p>
+<p>파이썬에서 객체를 반복할 수 있는지 확인하기 위해 두가지 과정을 순차적으로 거친다.</p>
+<ol>
+<li>객체가 <code class="language-text">__next__</code> 나 <code class="language-text">__iter__</code> 이터레이터 메서드 중 하나를 포함하는지 여부</li>
+<li>객체가 시퀀스이고 <code class="language-text">__len__</code> 과 <code class="language-text">__getitem__</code> 를 모두 가졌는지 여부</li>
+</ol>
+<p>두가지 방법에 대해 기본 구현을 해보았다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token comment"># __iter__ 를 활용</span>
+<span class="token keyword">class</span> <span class="token class-name">Iterable_iter</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">]</span>
+        self<span class="token punctuation">.</span>_idx <span class="token operator">=</span> <span class="token number">0</span>
+    <span class="token keyword">def</span> <span class="token function">__iter__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">while</span> self<span class="token punctuation">.</span>_idx <span class="token operator">!=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>values<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">yield</span> self<span class="token punctuation">.</span>values<span class="token punctuation">[</span>self<span class="token punctuation">.</span>_idx<span class="token punctuation">]</span>
+            self<span class="token punctuation">.</span>_idx <span class="token operator">+=</span> <span class="token number">1</span>
+            
+i_obj <span class="token operator">=</span> Iterable_iter<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> i_obj<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+    
+<span class="token operator">>></span><span class="token operator">></span>
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token comment"># __getitem__ 를 활용</span>
+<span class="token keyword">class</span> <span class="token class-name">Iterable_getitem</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>values <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span>
+    <span class="token keyword">def</span> <span class="token function">__len__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> <span class="token builtin">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>values<span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__getitem__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>values<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+      
+i_obj <span class="token operator">=</span> Iterable_getitem<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> i_obj<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span>
+
+<span class="token operator">>></span><span class="token operator">></span>
+<span class="token number">1</span>
+<span class="token number">2</span>
+<span class="token number">3</span>
+<span class="token number">4</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h2 id="5-컨테이너-객체" style="position:relative;"><a href="#5-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B0%9D%EC%B2%B4" aria-label="5 컨테이너 객체 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 컨테이너 객체</h2>
+<p>컨테이너 객체는 <code class="language-text">__contains__</code> 메서드를 구현한 객체를 말한다. 이는 파이썬에서 in 키워드가 발견될 때 호출된다. 사용자는 <code class="language-text">__contains__</code> 매직 메서드가 구현되어 있지 않은 객체도 직접 구현을 통해 컨테이너 객체를 만들어 <code class="language-text">in</code> 을 사용할 수 있다.</p>
+<p>행복한 사람인지 체크하는 예제를 만들어보았다!</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> name<span class="token punctuation">,</span> happy<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        self<span class="token punctuation">.</span>happy <span class="token operator">=</span> happy
+
+<span class="token keyword">class</span> <span class="token class-name">HappyCheck</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> threshold<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>happy_threshold <span class="token operator">=</span> threshold
+    <span class="token keyword">def</span> <span class="token function">__contains__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> person<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">return</span> person<span class="token punctuation">.</span>happy <span class="token operator">>=</span> self<span class="token punctuation">.</span>happy_threshold
+
+          
+p1 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"suwan"</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">)</span>
+p2 <span class="token operator">=</span> Person<span class="token punctuation">(</span><span class="token string">"gildong"</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">)</span>
+
+hc <span class="token operator">=</span> HappyCheck<span class="token punctuation">(</span>threshold <span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> p <span class="token keyword">in</span> <span class="token punctuation">[</span>p1<span class="token punctuation">,</span> p2<span class="token punctuation">]</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> p <span class="token keyword">in</span> hc<span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>p<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">은 행복한사람"</span></span><span class="token punctuation">)</span>
+    <span class="token keyword">else</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string-interpolation"><span class="token string">f"</span><span class="token interpolation"><span class="token punctuation">{</span>p<span class="token punctuation">.</span>name<span class="token punctuation">}</span></span><span class="token string">은 그렇지 않은 사람..ㅠㅠ"</span></span><span class="token punctuation">)</span>
+        
+<span class="token operator">>></span><span class="token operator">></span>
+suwan은 행복한사람
+gildong은 그렇지 않은 사람<span class="token punctuation">.</span><span class="token punctuation">.</span>ㅠㅠ
+        </code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h2 id="6-객체의-동적인-속성" style="position:relative;"><a href="#6-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%8F%99%EC%A0%81%EC%9D%B8-%EC%86%8D%EC%84%B1" aria-label="6 객체의 동적인 속성 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. 객체의 동적인 속성</h2>
+<p>객체에서 속성을 얻고자 할 때 속성이 있다면 손쉽게 값을 받아오지만 그렇지 않을 경우 에러를 반환한다. 지정되지 않은 속성에 접근할 때 내부적으로 <code class="language-text">__getattr__</code> 메소드를 거치는데, 이를 직접 정의하면 새로운 속성을 정의하는 등 예외적인 재미있는 일들을 할 수 있다.</p>
+<h2 id="7-호출형callable-객체" style="position:relative;"><a href="#7-%ED%98%B8%EC%B6%9C%ED%98%95callable-%EA%B0%9D%EC%B2%B4" aria-label="7 호출형callable 객체 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. 호출형(callable) 객체</h2>
+<p>매직 메서드 <code class="language-text">__call__</code> 을 사용하면 객체를 일반 함수처럼 호출할 수 있다.</p>
+<p>입력된 파라미터와 동일한 값으로 몇 번이나 호출되었는지 카운팅하는 책의 예제이다.</p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">from</span> collections <span class="token keyword">import</span> defaultdict
+
+
+<span class="token keyword">class</span> <span class="token class-name">CallCount</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_counts <span class="token operator">=</span> defaultdict<span class="token punctuation">(</span><span class="token builtin">int</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">__call__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> argument<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>_counts<span class="token punctuation">[</span>argument<span class="token punctuation">]</span> <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">return</span> self<span class="token punctuation">.</span>_counts<span class="token punctuation">[</span>argument<span class="token punctuation">]</span>
+
+<span class="token operator">>></span><span class="token operator">></span> cc <span class="token operator">=</span> CallCount<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token operator">>></span><span class="token operator">></span> cc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> cc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">2</span>
+<span class="token operator">>></span><span class="token operator">></span> cc<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token number">1</span>
+<span class="token operator">>></span><span class="token operator">></span> cc<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token number">3</span>
+<span class="token operator">>></span><span class="token operator">></span> cc<span class="token punctuation">(</span><span class="token string">"something"</span><span class="token punctuation">)</span>
+<span class="token number">1</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<h2 id="8-매직-메서드-요약" style="position:relative;"><a href="#8-%EB%A7%A4%EC%A7%81-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%9A%94%EC%95%BD" aria-label="8 매직 메서드 요약 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>8. 매직 메서드 요약</h2>
+<table>
+<thead>
+<tr>
+<th>문장</th>
+<th>매직메서드</th>
+<th>파이썬 컨셉</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obj[key]<br />obj[i:j]<br />obj[i:j:k]</td>
+<td>__getitem__(key)</td>
+<td>첨자형(subscriptable) 객체</td>
+</tr>
+<tr>
+<td>with obj: …</td>
+<td>__enter__ / __exit__</td>
+<td>컨텍스트 관리자</td>
+</tr>
+<tr>
+<td>for i in obj: …</td>
+<td>__iter__ / __next__<br />__len__ / __getitem__</td>
+<td>이터러블 객체<br />시퀀스</td>
+</tr>
+<tr>
+<td>obj(*args, **kwargs)</td>
+<td>__call__(*args, **kwargs)</td>
+<td>호출형 객체</td>
+</tr>
+</tbody>
+</table>
+<br/>
+<hr>
+<p><a id="ch3"></a></p>
+<h1 id="ch3-좋은-코드의-일반적인-특징" style="position:relative;"><a href="#ch3-%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%93%9C%EC%9D%98-%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-%ED%8A%B9%EC%A7%95" aria-label="ch3 좋은 코드의 일반적인 특징 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>CH3. 좋은 코드의 일반적인 특징</h1>
+<p>이 장에서 훌륭한 소프트웨어 디자인을 위한 몇가지 원칙을 배운다.</p>
+<h2 id="1-계약에-의한-디자인" style="position:relative;"><a href="#1-%EA%B3%84%EC%95%BD%EC%97%90-%EC%9D%98%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8" aria-label="1 계약에 의한 디자인 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. 계약에 의한 디자인</h2>
+<p>코드가 정삭적으로 동작하기 위해 기대하는 것과 호출자가 반환 받기를 기대하는 것은 디자인의 하나가 되어야 한다. 여기서 계약이라는 개념이 생긴다.</p>
+<p><strong>계약에 의한 디자인</strong>이란 이런 것이다. 계약은 소프트웨어 컴포넌트간의 통신 중에 반드시 지켜야하는 몇 가지 규칙을 강제하는 것을 말한다. 계약을 위해 보통 사전조건과 사후조건을 명시한다. </p>
+<p>계약을 정의하는 이유는 오류가 발생할 때 쉽게 찾아내기 위함이다. 사전조건과 사후조건으로 나눴으므로 책임소재를 신속하게 파악할 수 있다.</p>
+<h3 id="사전조건" style="position:relative;"><a href="#%EC%82%AC%EC%A0%84%EC%A1%B0%EA%B1%B4" aria-label="사전조건 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사전조건</h3>
+<p>사전조건은 함수나 메서드가 제대로 동작하기 위해 보장해야 하는 모든 것을 말한다. 다시말하면 적절한 데이터를 전달했는지 판단하는 것이다.</p>
+<p> 유효성 검사를 클라이언트 혹은 함수내부에서 할 수 있지만, 보통의 경우 함수 내부에서 실행된다.</p>
+<h3 id="사후조건" style="position:relative;"><a href="#%EC%82%AC%ED%9B%84%EC%A1%B0%EA%B1%B4" aria-label="사후조건 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>사후조건</h3>
+<p>사후조건은 메서드 또는 함수가 반환된 후의 상태를 강제하는 계약을 말한다. </p>
+<h3 id="파이썬스러운-계약" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%8A%A4%EB%9F%AC%EC%9A%B4-%EA%B3%84%EC%95%BD" aria-label="파이썬스러운 계약 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파이썬스러운 계약</h3>
+<p>가장 좋은 방법은 메서드, 함수 및 클래스에 RuntimeError, ValueError를 발생시키는 제어 매커니즘을 추가하는 것이다. 문제를 정의하기 어렵다면 사용자 정의 예외를 만드는 것이 좋다.</p>
+<p>데코레이터를 통해 코드를 격리된 상태로 관리하는 것이 좋다.</p>
+<h3 id="계약에-의한-디자인-결론" style="position:relative;"><a href="#%EA%B3%84%EC%95%BD%EC%97%90-%EC%9D%98%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%EA%B2%B0%EB%A1%A0" aria-label="계약에 의한 디자인 결론 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>계약에 의한 디자인 결론</h3>
+<p>디자인 원칙의 주된 가치는 문제가 있는 부분을 효과적으로 식별하는 데 있다.</p>
+<p>귀찮지만 이렇게하면 얻은 품질은 장기적으로 보상된다. </p>
+<ul>
+<li>타입체크를 위해 <code class="language-text">mypy</code>를 사용하면 손쉽게 구현할 수 있다.</li>
+</ul>
+<h2 id="2-방어적-프로그래밍" style="position:relative;"><a href="#2-%EB%B0%A9%EC%96%B4%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D" aria-label="2 방어적 프로그래밍 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. 방어적 프로그래밍</h2>
+<p>유효하지 않은 것들로부터 스스로 보호하는 기법</p>
+<p>다른 디자인 원칙과 서로 보완 관계에 있다.</p>
+<p>에러 핸들링과 어썰션에 대해 이야기한다.</p>
+<h3 id="에러-핸들링" style="position:relative;"><a href="#%EC%97%90%EB%9F%AC-%ED%95%B8%EB%93%A4%EB%A7%81" aria-label="에러 핸들링 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>에러 핸들링</h3>
+<p>데이터 입력 확인 시 자주 사용된다.</p>
+<p>에러 핸들링의 주요 목적은 예상되는 에러에 대해서 실행을 계속할 수 있을지 아니면 극복할 수 없는 오류여서 프로그램을 중단할지를 결정하는 것이다.</p>
+<h4 id="값-대체" style="position:relative;"><a href="#%EA%B0%92-%EB%8C%80%EC%B2%B4" aria-label="값 대체 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>값 대체</h4>
+<p>에러 핸들링에 값 대체라는 기법이 있는 것인데, 말 그대로 문제가 되는 변수의 값을 바꿔주는 것이다.</p>
+<p>하지만 이는 분명 견고성과 정확성 두가지 측면에서의 트레이프오프가 발생한다.</p>
+<p>가장 안전하게 값 대체를 사용할 수 있는 경우는 제공되지 않은 데이터에 기본 값을 사용할 때이다. (<code class="language-text">dictionary get</code>, <code class="language-text">os.getenv</code>)</p>
+<h4 id="예외처리" style="position:relative;"><a href="#%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC" aria-label="예외처리 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>예외처리</h4>
+<p>에러가 발생했을 때 다양한 기법으로 에러를 처리하고 진행할 수도 있지만 이렇게 계속 실행하는 것보다 차라리 실행을 멈추는 것이 더 좋다. 멈추되 이때 중요하는 것은 어떠한 에러인지 명확하게 알려주는 것이다.</p>
+<p>파이썬의 예외와 관련된 몇 가지 관장 사항이다.</p>
+<h5 id="a-올바른-수준의-추상화-단계에서-예외-처리" style="position:relative;"><a href="#a-%EC%98%AC%EB%B0%94%EB%A5%B8-%EC%88%98%EC%A4%80%EC%9D%98-%EC%B6%94%EC%83%81%ED%99%94-%EB%8B%A8%EA%B3%84%EC%97%90%EC%84%9C-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC" aria-label="a 올바른 수준의 추상화 단계에서 예외 처리 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>a. 올바른 수준의 추상화 단계에서 예외 처리</h5>
+<p>이를 위해 가장 기본적으로 지켜야할 것이 한가지 일을 하는 함수에 대해서 에러를 처리해야 한다는 것이다. 두가지 일을 하는 부분을 한번에 예외처리 하게되면 어디서 에러가 나는지 명확하게 찾기 어렵다.</p>
+<h5 id="b-traceback-노출-금지" style="position:relative;"><a href="#b-traceback-%EB%85%B8%EC%B6%9C-%EA%B8%88%EC%A7%80" aria-label="b traceback 노출 금지 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>b. Traceback 노출 금지</h5>
+<p>개발을 하다보면 Traceback을 많이 보았을 것이다. 에러를 찾기위해 너무도 중요하게 사용되곤한다. Traceback은 오류를 발생시킨 함수 호출을 역추적한 내용을 말한다. 이는 악의적인 사용자에게 너무도 유용한 정보이므로 유출하지 말자.</p>
+<h5 id="c-비어있는-except-블럭-지양" style="position:relative;"><a href="#c-%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94-except-%EB%B8%94%EB%9F%AD-%EC%A7%80%EC%96%91" aria-label="c 비어있는 except 블럭 지양 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>c. 비어있는 except 블럭 지양</h5>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+    function<span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">pass</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span></span></pre></div>
+<p>만약 위와같이 <code class="language-text">function()</code>을 실행하게 되면  해당 함수에 문제가 되더라도 문제가 되지 않는다;; 정말 큰 문제다</p>
+<h5 id="d-원본-예외-포함" style="position:relative;"><a href="#d-%EC%9B%90%EB%B3%B8-%EC%98%88%EC%99%B8-%ED%8F%AC%ED%95%A8" aria-label="d 원본 예외 포함 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>d. 원본 예외 포함</h5>
+<p>오류 처리 과정에서 다른 오류를 발생시키고 메시지를 변경할 수도 있다. </p>
+<h3 id="파이썬에서-어설션-사용하기" style="position:relative;"><a href="#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C-%EC%96%B4%EC%84%A4%EC%85%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0" aria-label="파이썬에서 어설션 사용하기 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>파이썬에서 어설션 사용하기</h3>
+<p>어설션은 절대로 일어나지 않아야 하는 상황에 사용된다. 개선의 여지 없이 중단해야 할 critical한 문제에 대해서만 사용을 하고 관련 Log를 명확히 해주면 좋을 것 같다.</p>
+<h2 id="3-관심사의-분리" style="position:relative;"><a href="#3-%EA%B4%80%EC%8B%AC%EC%82%AC%EC%9D%98-%EB%B6%84%EB%A6%AC" aria-label="3 관심사의 분리 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. 관심사의 분리</h2>
+<p>프로그램 기능의 일부분을 관심사라한다. 먼저 파급(ripple) 효과라는 개념이 나오는데 이는 어느 지점에서의 변화가 전체로 전파되는 것을 의미한다. 관심사가 분리되어 있지 않으면 파급 효과에 의해서 유지 보수성이 떨어진다. </p>
+<p>관심사의 분리는 기본적으로 파이썬 모듈, 패키지 그리고 모든 소프트웨어 컴포넌트에 대해서 적용된다.</p>
+<p>추가적으로 응집력과 결합력이라는 개념이 나온다.</p>
+<ul>
+<li>응집력: 객체가 작고 잘 정의된 목적을 가져야 하며 가능하면 작아야 한다는 의미</li>
+<li>결합력: 두 개 이상의 객체가 서로 어떻게 의존하는지를 의미</li>
+</ul>
+<p>잘 정의된 소프트웨어는 높은 응집력과 낮은 결합력을 갖는다.</p>
+<h2 id="4-개발지침-약어" style="position:relative;"><a href="#4-%EA%B0%9C%EB%B0%9C%EC%A7%80%EC%B9%A8-%EC%95%BD%EC%96%B4" aria-label="4 개발지침 약어 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. 개발지침 약어</h2>
+<p>좋은 디자인 아이디어를 주는 몇 가지 원칙을 검토한다.</p>
+<h4 id="1-dryoaoo" style="position:relative;"><a href="#1-dryoaoo" aria-label="1 dryoaoo permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>1. DRY/OAOO</h4>
+<p>DRY(Do not Repeat Yourself)</p>
+<p>OAOO(Once and Only Once)</p>
+<p>중복을 피하라는 이야기이다. 코드에 있는 지식은 단 한번, 단 한 곳에서 정의되어야 한다. 코드를 변경하려고 할 때 수정이 필요한 곳은 단 한군데만 있어야 한다. 그 이유는 아래와 같다.</p>
+<ol>
+<li>오류가 발생하기 쉽다.</li>
+<li>비용이 비싸다.</li>
+<li>신뢰성이 떨어진다.</li>
+</ol>
+<p>너무도 당연한 이야기여서 이만 줄이겠다.</p>
+<h4 id="2-yagni" style="position:relative;"><a href="#2-yagni" aria-label="2 yagni permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>2. YAGNI</h4>
+<p>YAGNI(You Ain’t Gonna Need it) </p>
+<p>과잉 엔지니어링을 방지하기 위한 원칙이다. 현재 코드를 작성하면서 굳이 미래의 일을 예측해서 상황을 처리하지 말라는 이야기이다. </p>
+<p>유지보수가 가능한 소프트웨어를 만드는 것은 미래의 요구 사항을 예측하는 것이 아니다. 오직 현재의 요구사항을 잘 해결하기 위한 소프트웨어를 작성하고 가능한 나중에 수정하기 쉽도록 작성하는 것이다.</p>
+<h4 id="3-kis" style="position:relative;"><a href="#3-kis" aria-label="3 kis permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>3. KIS</h4>
+<p>KIS(Keep It Simple)</p>
+<p>YAGNI와 비슷하게 과잉 엔지니어링을 방지하기 위한 원칙이다. 코드는 단순할 수록 유지 관리가 쉽다.</p>
+<p>파이썬의 철학: 단순한 것이 복잡한 것보다 낫다.</p>
+<h4 id="4-eafplbyl" style="position:relative;"><a href="#4-eafplbyl" aria-label="4 eafplbyl permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>4. EAFP/LBYL</h4>
+<p>EAFP(Easier to Ask Forgiveness than Permission) - 허락보다 용서를 구하는 것이 쉽다.</p>
+<p>LBYL(Look Before You Leap) - 도약하기 전에 살피라는 뜻</p>
+<p>결론부터 이야기하자면 파이썬에선 LBFP 원칙보다 EAFP 원칙이 더 바람직하다.</p>
+<p><strong>LBYL - 도약하기 전에 살피기 예시</strong></p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>filename<span class="token punctuation">)</span><span class="token punctuation">:</span>
+  <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span></span></pre></div>
+<p><strong>EAFP - 허락보다 용서를 구하기 예시</strong></p>
+<div class="gatsby-highlight" data-language="python"><pre style="counter-reset: linenumber NaN" class="language-python line-numbers"><code class="language-python"><span class="token keyword">try</span><span class="token punctuation">:</span>
+  <span class="token keyword">with</span> <span class="token builtin">open</span><span class="token punctuation">(</span>filename<span class="token punctuation">)</span> <span class="token keyword">as</span> f<span class="token punctuation">:</span>
+    <span class="token operator">-</span><span class="token operator">-</span><span class="token operator">-</span>
+<span class="token keyword">except</span> FileNotFoundError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+  logger<span class="token punctuation">.</span>error<span class="token punctuation">(</span>e<span class="token punctuation">)</span></code><span aria-hidden="true" class="line-numbers-rows" style="white-space: normal; width: auto; left: 0;"><span></span><span></span><span></span><span></span><span></span></span></pre></div>
+<p>사실 좀 긴가민가하다. EAFP의 에러 처리의 방식에서 FileNotFoundError가 try문의 에러를 다 담을 수 있는건지? LBYL의 else로 에러를 충분히 log할 수 있는지 너무 복잡해지지는 않는지? </p>
+<h2 id="5-컴포지션과-상속" style="position:relative;"><a href="#5-%EC%BB%B4%ED%8F%AC%EC%A7%80%EC%85%98%EA%B3%BC-%EC%83%81%EC%86%8D" aria-label="5 컴포지션과 상속 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>5. 컴포지션과 상속</h2>
+<p>객체지향 소프트웨어에서 흔히 말하는 다형성, 캡슐화 같은 주요 개념을 파이썬에서는 상속이라는 개념으로 이해하고 사용할 수 있다.</p>
+<p>상속은 강력한 개념이지만 위험도 있다. 가장 주된 위험은 부모 클래스를 확장하여 새로운 클래스를 만들 때마다 부모와 강력하게 결합된 새로운 클래스가 생긴다는 점이다. 앞서 “관심사의 분리”에서 결합력이 낮을수록 좋은 소프트웨어라고 이야기했었다. </p>
+<p>인터페이스 정의는 상속의 좋은 예이다. 어떤 객체에 인터페이스 방식을 강제하고자 할 때 구현을 하지 않은 기본 추상 클래스를 만들고, 실제 이 클래스를 상속하는 하위 클래스에서 적절하게 구현을 하도록 하는것이다.</p>
+<p>필요한 기능이 있다고 상위 클래스를 무작정 가져오는 것을 위험부담이 클 수 있다. 상위 클래스에 있는 메소드들이 하위 클래스에도 똑같이 적용이 되므로 사용자에게 불필요한, 또는 위험한 메서드가 있을 수 있다. 이럴 때 올바른 해결책은 컴포지션을 사용하는 것이다. <code class="language-text">UserDict</code> 를 상속하는 것이 아니라 <code class="language-text">UserDict</code> 를 사용하는 것을 이야기한다. </p>
+<h2 id="6-함수와-메서드의-인자" style="position:relative;"><a href="#6-%ED%95%A8%EC%88%98%EC%99%80-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%EC%9D%B8%EC%9E%90" aria-label="6 함수와 메서드의 인자 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>6. 함수와 메서드의 인자</h2>
+<p>파이썬의 인자는 다른 많은 프로그래밍 언어와 마찬가지로 위치에 기반을 두어 호출할 수도 있고 키워드에 기반을 두어 호출할 수도 있다.</p>
+<p>변수 언패킹을 통해 가독성을 올릴 수 있다. 부분적인 언패킹도 가능하다는 것을 잊지 말자.</p>
+<p>너무 많은 인자를 사용하는 것은 나쁜 디자인의 징후이다.</p>
+<ul>
+<li>먼저 함수가 오직 한 가지 일만 하고 있는지 확인해보자.</li>
+<li>파라미터들이 서로 관계가 있다면 패킹해서 보내는 방법도 고려해보자.</li>
+<li><code class="language-text">*args</code>, <code class="language-text">**kwargs</code> 를 이용해서 정의할수도 있다. (하지만 서명을 잃어버린다는 점이 주는 가독성의 상실도 기억하자)</li>
+</ul>
+<h2 id="7-소프트웨어-디자인-우수-사례-결론" style="position:relative;"><a href="#7-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%9A%B0%EC%88%98-%EC%82%AC%EB%A1%80-%EA%B2%B0%EB%A1%A0" aria-label="7 소프트웨어 디자인 우수 사례 결론 permalink" class="anchor-header before"><svg aria-hidden="true" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>7. 소프트웨어 디자인 우수 사례 결론</h2>
+<p>좋은 소프트웨어 디자인이란 소프트웨어 엔지니어링의 우수 사례를 따르고 언어의 기능이 제공하는 대부분의 장점을 활용하는 디자인이다.</p>
+<p><strong>소프트웨어의 독립성</strong></p>
+<p>모듈, 클래스 또는 함수를 변경하면 수정한 컴포넌트가 외부 세계에 영향을 미치지 않아야 한다. 물론 이것은 바람직하지만 항상 가능한 것은 아니다. 이것이 불가능하더라도 좋은 디자인은 가능한 한 영향을 최소화하려고 시도해야 한다.</p>
+<p>이는 또 단위 테스트시 빛을 바래는데, 하나의 함수가 다른 코드들과 완전히 독립적이라면 함수 변경 시 대상 함수에 대한 단위 테스트만으로 전체 회귀 테스트를 진행하지 않아도 됨을 보장할 수 있다.</p></div></div><aside><div class="RelatedPosts__Wrapper-u5r1r9-0 hyGLFx"><div class="RelatedPosts__PostCardWrapper-u5r1r9-1 htBxaS"><a class="post-card-link" href="/category/blog/interview/"><p class="RelatedPosts__PostCardEmoji-u5r1r9-2 jNtXLx"><img class="emoji" draggable="false" alt="❓" src="https://twemoji.maxcdn.com/v/12.1.6/svg/2753.svg"/></p><div class="RelatedPosts__PostCardContent-u5r1r9-3 ejjRZu"><h5>[면접준비] minimum 질문&amp;답변</h5><time>2021.11.22</time></div></a></div><div class="RelatedPosts__PostCardWrapper-u5r1r9-1 htBxaS"><a class="post-card-link" href="/category/blog/hackerrank_certification/"><p class="RelatedPosts__PostCardEmoji-u5r1r9-2 jNtXLx"><img class="emoji" draggable="false" alt="📚" src="https://twemoji.maxcdn.com/v/12.1.6/svg/1f4da.svg"/></p><div class="RelatedPosts__PostCardContent-u5r1r9-3 ejjRZu"><h5>해커랭크 인증서 발급 후기</h5><time>2021.11.19</time></div></a></div><div class="RelatedPosts__PostCardWrapper-u5r1r9-1 htBxaS"><a class="post-card-link" href="/category/blog/m1-tensorflow/"><p class="RelatedPosts__PostCardEmoji-u5r1r9-2 jNtXLx"><img class="emoji" draggable="false" alt="💪" src="https://twemoji.maxcdn.com/v/12.1.6/svg/1f4aa.svg"/></p><div class="RelatedPosts__PostCardContent-u5r1r9-3 ejjRZu"><h5>[Tensorflow] M1에서 Tensorflow GPU 사용하기 (Monterey)</h5><time>2021.11.13</time></div></a></div><div class="RelatedPosts__PostCardWrapper-u5r1r9-1 htBxaS"><a class="post-card-link" href="/category/blog/effective-python/"><p class="RelatedPosts__PostCardEmoji-u5r1r9-2 jNtXLx"><img class="emoji" draggable="false" alt="📚" src="https://twemoji.maxcdn.com/v/12.1.6/svg/1f4da.svg"/></p><div class="RelatedPosts__PostCardContent-u5r1r9-3 ejjRZu"><h5>[책] 파이썬 코딩의 기술</h5><time>2021.11.02</time></div></a></div><div class="RelatedPosts__PostCardWrapper-u5r1r9-1 htBxaS"><a class="post-card-link" href="/category/blog/mlops/simple_model_deploy_mnist/"><p class="RelatedPosts__PostCardEmoji-u5r1r9-2 jNtXLx"><img class="emoji" draggable="false" alt="🏃" src="https://twemoji.maxcdn.com/v/12.1.6/svg/1f3c3.svg"/></p><div class="RelatedPosts__PostCardContent-u5r1r9-3 ejjRZu"><h5>[MLOps] Vertex AI에서 모델 배포하기 (MNIST)</h5><time>2021.11.01</time></div></a></div></div><div></div></aside></section></div><div class="TableOfContents__TableIndex-v24s1h-0 cuevDS"><div class="TableOfContents__TableWrapper-v24s1h-1 AxgAV table-of-contents"><h1 class="TableOfContents__TableHeader-v24s1h-2 bpgLWH">🔖 Catalog</h1><div class="TableOfContents__TableContents-v24s1h-3 gFKJVf"><ul>
+<li>
+<ul>
+<li><a href="/category/blog/python-clean-code/#%EB%AA%A9%EC%B0%A8--%EC%95%84%EC%A7%81-%EC%9E%91%EC%84%B1-%EC%A4%91%EC%9D%B8-%EA%B8%80%EC%9E%85%EB%8B%88%EB%8B%A4">목차 (❗❗❗ 아직 작성 중인 글입니다.)</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/category/blog/python-clean-code/#ch1-%EC%86%8C%EA%B0%9C-%EC%BD%94%EB%93%9C-%ED%8F%AC%EB%A7%A4%ED%8C%85%EA%B3%BC-%EB%8F%84%EA%B5%AC">CH1. 소개, 코드 포매팅과 도구</a></p>
+<ul>
+<li><a href="/category/blog/python-clean-code/#11-docstring">1.1. Docstring</a></li>
+<li><a href="/category/blog/python-clean-code/#12-annotation">1.2. Annotation</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/category/blog/python-clean-code/#ch2-%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%8A%A4%EB%9F%AC%EC%9A%B4pythonic-%EC%BD%94%EB%93%9C">CH2. 파이썬스러운(pythonic) 코드</a></p>
+<ul>
+<li>
+<p><a href="/category/blog/python-clean-code/#21-%EC%9D%B8%EB%8D%B1%EC%8A%A4%EC%99%80-%EC%8A%AC%EB%9D%BC%EC%9D%B4%EC%8A%A4">2.1. 인덱스와 슬라이스</a></p>
+<ul>
+<li><a href="/category/blog/python-clean-code/#211-%EC%9E%90%EC%B2%B4-%EC%8B%9C%ED%80%80%EC%8A%A4-%EC%83%9D%EC%84%B1">2.1.1. 자체 시퀀스 생성</a></li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#22-%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8-%EA%B4%80%EB%A6%AC%EC%9E%90">2.2. <strong>컨텍스트 관리자</strong></a></li>
+<li>
+<p><a href="/category/blog/python-clean-code/#23-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-%EC%86%8D%EC%84%B1%EA%B3%BC-%EA%B0%9D%EC%B2%B4-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%EB%8B%A4%EB%A5%B8-%ED%83%80%EC%9E%85%EB%93%A4">2.3. 프로퍼티, 속성과 객체 메서드의 다른 타입들</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="/category/blog/python-clean-code/#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C%EC%9D%98-%EB%B0%91%EC%A4%84">파이썬에서의 밑줄</a></li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#231-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0">2.3.1. <strong>프로퍼티</strong></a></li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#4-%EC%9D%B4%ED%84%B0%EB%9F%AC%EB%B8%94-%EA%B0%9D%EC%B2%B4">4. 이터러블 객체</a></li>
+<li><a href="/category/blog/python-clean-code/#5-%EC%BB%A8%ED%85%8C%EC%9D%B4%EB%84%88-%EA%B0%9D%EC%B2%B4">5. 컨테이너 객체</a></li>
+<li><a href="/category/blog/python-clean-code/#6-%EA%B0%9D%EC%B2%B4%EC%9D%98-%EB%8F%99%EC%A0%81%EC%9D%B8-%EC%86%8D%EC%84%B1">6. 객체의 동적인 속성</a></li>
+<li><a href="/category/blog/python-clean-code/#7-%ED%98%B8%EC%B6%9C%ED%98%95callable-%EA%B0%9D%EC%B2%B4">7. 호출형(callable) 객체</a></li>
+<li><a href="/category/blog/python-clean-code/#8-%EB%A7%A4%EC%A7%81-%EB%A9%94%EC%84%9C%EB%93%9C-%EC%9A%94%EC%95%BD">8. 매직 메서드 요약</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/category/blog/python-clean-code/#ch3-%EC%A2%8B%EC%9D%80-%EC%BD%94%EB%93%9C%EC%9D%98-%EC%9D%BC%EB%B0%98%EC%A0%81%EC%9D%B8-%ED%8A%B9%EC%A7%95">CH3. 좋은 코드의 일반적인 특징</a></p>
+<ul>
+<li>
+<p><a href="/category/blog/python-clean-code/#1-%EA%B3%84%EC%95%BD%EC%97%90-%EC%9D%98%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8">1. 계약에 의한 디자인</a></p>
+<ul>
+<li><a href="/category/blog/python-clean-code/#%EC%82%AC%EC%A0%84%EC%A1%B0%EA%B1%B4">사전조건</a></li>
+<li><a href="/category/blog/python-clean-code/#%EC%82%AC%ED%9B%84%EC%A1%B0%EA%B1%B4">사후조건</a></li>
+<li><a href="/category/blog/python-clean-code/#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%8A%A4%EB%9F%AC%EC%9A%B4-%EA%B3%84%EC%95%BD">파이썬스러운 계약</a></li>
+<li><a href="/category/blog/python-clean-code/#%EA%B3%84%EC%95%BD%EC%97%90-%EC%9D%98%ED%95%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%EA%B2%B0%EB%A1%A0">계약에 의한 디자인 결론</a></li>
+</ul>
+</li>
+<li>
+<p><a href="/category/blog/python-clean-code/#2-%EB%B0%A9%EC%96%B4%EC%A0%81-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D">2. 방어적 프로그래밍</a></p>
+<ul>
+<li>
+<p><a href="/category/blog/python-clean-code/#%EC%97%90%EB%9F%AC-%ED%95%B8%EB%93%A4%EB%A7%81">에러 핸들링</a></p>
+<ul>
+<li><a href="/category/blog/python-clean-code/#%EA%B0%92-%EB%8C%80%EC%B2%B4">값 대체</a></li>
+<li>
+<p><a href="/category/blog/python-clean-code/#%EC%98%88%EC%99%B8%EC%B2%98%EB%A6%AC">예외처리</a></p>
+<ul>
+<li><a href="/category/blog/python-clean-code/#a-%EC%98%AC%EB%B0%94%EB%A5%B8-%EC%88%98%EC%A4%80%EC%9D%98-%EC%B6%94%EC%83%81%ED%99%94-%EB%8B%A8%EA%B3%84%EC%97%90%EC%84%9C-%EC%98%88%EC%99%B8-%EC%B2%98%EB%A6%AC">a. 올바른 수준의 추상화 단계에서 예외 처리</a></li>
+<li><a href="/category/blog/python-clean-code/#b-traceback-%EB%85%B8%EC%B6%9C-%EA%B8%88%EC%A7%80">b. Traceback 노출 금지</a></li>
+<li><a href="/category/blog/python-clean-code/#c-%EB%B9%84%EC%96%B4%EC%9E%88%EB%8A%94-except-%EB%B8%94%EB%9F%AD-%EC%A7%80%EC%96%91">c. 비어있는 except 블럭 지양</a></li>
+<li><a href="/category/blog/python-clean-code/#d-%EC%9B%90%EB%B3%B8-%EC%98%88%EC%99%B8-%ED%8F%AC%ED%95%A8">d. 원본 예외 포함</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#%ED%8C%8C%EC%9D%B4%EC%8D%AC%EC%97%90%EC%84%9C-%EC%96%B4%EC%84%A4%EC%85%98-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">파이썬에서 어설션 사용하기</a></li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#3-%EA%B4%80%EC%8B%AC%EC%82%AC%EC%9D%98-%EB%B6%84%EB%A6%AC">3. 관심사의 분리</a></li>
+<li>
+<p><a href="/category/blog/python-clean-code/#4-%EA%B0%9C%EB%B0%9C%EC%A7%80%EC%B9%A8-%EC%95%BD%EC%96%B4">4. 개발지침 약어</a></p>
+<ul>
+<li>
+<ul>
+<li><a href="/category/blog/python-clean-code/#1-dryoaoo">1. DRY/OAOO</a></li>
+<li><a href="/category/blog/python-clean-code/#2-yagni">2. YAGNI</a></li>
+<li><a href="/category/blog/python-clean-code/#3-kis">3. KIS</a></li>
+<li><a href="/category/blog/python-clean-code/#4-eafplbyl">4. EAFP/LBYL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="/category/blog/python-clean-code/#5-%EC%BB%B4%ED%8F%AC%EC%A7%80%EC%85%98%EA%B3%BC-%EC%83%81%EC%86%8D">5. 컴포지션과 상속</a></li>
+<li><a href="/category/blog/python-clean-code/#6-%ED%95%A8%EC%88%98%EC%99%80-%EB%A9%94%EC%84%9C%EB%93%9C%EC%9D%98-%EC%9D%B8%EC%9E%90">6. 함수와 메서드의 인자</a></li>
+<li><a href="/category/blog/python-clean-code/#7-%EC%86%8C%ED%94%84%ED%8A%B8%EC%9B%A8%EC%96%B4-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%9A%B0%EC%88%98-%EC%82%AC%EB%A1%80-%EA%B2%B0%EB%A1%A0">7. 소프트웨어 디자인 우수 사례 결론</a></li>
+</ul>
+</li>
+</ul></div></div></div></div></main></div></div><footer class="Footer__FooterContent-bp79pz-0 kilaSx"><div class="ContentWrapper__IndexContent-sc-184f5wv-0 gNlojF"><div class="Footer__FooterInner-bp79pz-1 bvCMhp"><div>© <!-- -->2022<!-- -->, Ssuwani. All rights reserved.</div></div></div></footer></div></div><div id="gatsby-announcer" style="position:absolute;top:0;width:1px;height:1px;padding:0;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0" aria-live="assertive" aria-atomic="true"></div></div><script async="" src="https://www.googletagmanager.com/gtag/js?id=G-MM0QK4NLQE"></script><script>
+    window.GATSBY_GTAG_PLUGIN_GA_TRACKING_ID = (
+      'G-MM0QK4NLQE'
+    );
+    window.GATSBY_GTAG_PLUGIN_ANONYMIZE = true;
+
+    var options = {
+      send_page_view: false
+    };
+    if (true) {
+      options.anonymize_ip = true;
+    }
+
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', 'G-MM0QK4NLQE', options);
+  </script><script>
+  
+  
+  if(true) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  }
+  if (typeof ga === "function") {
+    ga('create', 'none', 'auto', {});
+      
+      
+      
+      
+      
+      }</script><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/category/blog/python-clean-code/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-e1cbbafd9e0d67222ba1.js"],"component---node-modules-gatsby-plugin-offline-app-shell-js":["/component---node-modules-gatsby-plugin-offline-app-shell-js-71ad33effa27f873a1fc.js"],"component---src-pages-404-tsx":["/component---src-pages-404-tsx-7c091102bb3698204e45.js"],"component---src-pages-index-tsx":["/component---src-pages-index-tsx-1d80a09e79bd1fe70c2b.js"],"component---src-templates-categories-tsx":["/component---src-templates-categories-tsx-5e2cc865b8dd8344b8ea.js"],"component---src-templates-post-tsx":["/component---src-templates-post-tsx-ee1c336a1aa63cfbc58e.js"]};/*]]>*/</script><script src="/component---src-templates-post-tsx-ee1c336a1aa63cfbc58e.js" async=""></script><script src="/53b27b57f60ee3e1ca57a66cde9add975dffb161-2b60719b91291bfda095.js" async=""></script><script src="/de71a805-ab927e1633c63597cfb4.js" async=""></script><script src="/app-e1cbbafd9e0d67222ba1.js" async=""></script><script src="/styles-09367947dddffb36886c.js" async=""></script><script src="/framework-59a9ef51c55d9b62f7de.js" async=""></script><script src="/webpack-runtime-91cbc5ed6c6972297464.js" async=""></script></body></html>
